@@ -1,0 +1,275 @@
+body {
+    overflow-x: hidden;
+}
+
+.tx_bold {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 80%;
+}
+
+.navbar-nav2 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.box_grenn_heght {
+    height: 150px;
+    background: linear-gradient(270deg, #77EEE7 29.45%, #63EE9B 61.71%, #50E78C 91.45%);
+}
+
+.box_mg {
+    height: 100px;
+    left: 0px;
+    top: 150px;
+    background: linear-gradient(180deg, #F29F05 19.21%, #FFBE55 53.45%, #F29F05 78.96%);
+}
+
+.tex_green {
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+}
+
+.close_icon {
+    width: 2%;
+    margin-right: 5%;
+}
+
+.bg_centerBox {
+    background: #5DADEA;
+    min-height: 100dvh;
+    max-height: 100%;
+}
+
+.tx_white {
+    color: white;
+}
+
+.borderWhite {
+    color: white;
+    border-width: 3px;
+}
+
+.bg_footer {
+    background: #0560A4;
+    margin-bottom: -100%;
+}
+
+.color_footer {
+    background: rgba(5, 135, 164, 0.65);
+    height: 50px;
+}
+
+.text_siz {
+    font-size: 14px;
+}
+
+.mar_le {
+    margin-left: -100px;
+}
+
+.mar_le2 {
+    margin-left: -190px;
+}
+
+.mar_le3 {
+    margin-left: -250px;
+}
+
+.bg_midle_box2 {
+    background: #0560A4;
+    min-height: 100vh;
+}
+
+.WhiteBox {
+    box-sizing: border-box;
+    width: 80%;
+    height: 500px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.63);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.borderhe {
+    border-width: 3px;
+    color: white;
+}
+
+.edit_icon {
+    width: 100%;
+}
+
+.midleboxcolor {
+    position: absolute;
+    width: 1440px;
+    height: 191px;
+    left: 0px;
+    background: linear-gradient(270deg, #77EEE7 29.45%, #63EE9B 61.71%, #50E78C 91.45%)
+}
+
+.bg_color_blue {
+    background-color: #0560A4;
+    height: fit-content;
+}
+
+.position_sert {
+    position: absolute;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+    margin-top: 6%;
+}
+
+.tool_box {
+    height: 200px;
+    background: #FFFFFF;
+    /* right: 5px !important; */
+}
+
+.widthmar {
+    width: 99%;
+
+}
+
+.image_size {
+    width: 30%;
+}
+
+.quixbox {
+    box-sizing: border-box;
+    height: 575px;
+    margin-top: 22%;
+    background: linear-gradient(180deg, rgba(237, 227, 210, 0.99) 0%, rgba(237, 227, 210, 0.6039) 100%);
+    border: 2px solid rgba(0, 0, 0, 0.69);
+}
+
+.numberbo {
+    width: 59px;
+    height: 46px;
+    background: rgba(231, 80, 225, 0.4);
+    border-radius: 20px;
+}
+
+.boxbtrow {
+    width: 32px;
+    height: 10px;
+    left: 704px;
+    top: 648px;
+    background: #ED5855;
+    border-radius: 20px;
+}
+
+.chart1 {
+    width: 150px;
+    height: 120px;
+}
+
+.imgavarage {
+    width: 100%;
+}
+
+.avaregBTN {
+    width: 198px;
+    height: 44px;
+    left: 538px;
+    top: 891px;
+    background: #409CB5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endBoxBTN {
+    width: 228px;
+    height: 71px;
+    left: 886px;
+    top: 888px;
+    margin-left: 45% !important;
+    background: #B90909;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.underBTN {
+    width: 300px;
+    height: 71px;
+    margin-left: 30%;
+    margin-top: 5%;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brderbox {
+    width: 45px;
+    height: 34px;
+    background-color: rgba(248, 166, 166, 0.81);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWithSEt {
+    width: 5%;
+
+}
+
+.align_cen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropimg {
+    width: 100%;
+}
+
+.texmat {
+    margin-left: -20%;
+}
+
+
+.nav_png {
+    width: 40px;
+    height: 40px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+.color_white{
+    color: white;
+}
+.color_dark{
+    color: rgba(0, 0, 0, 0.37);
+}
+
+
+
+
+
+@media screen and (max-width: 1250px) {
+    .mar_le {
+        margin-left: 0px;
+    }
+
+    .mar_le2 {
+        margin-left: 0px;
+    }
+
+    .mar_le3 {
+        margin-left: 0px;
+    }
+}
