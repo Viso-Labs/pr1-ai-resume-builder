@@ -12,23 +12,23 @@ export default function Heder_nav() {
 
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
-                    <a class="navbar-brand ms-4" href="#">
-                    <Link to="/"><img class="logo" src="./images/logo2.png" alt=""/></Link>
-                    </a>
+                    <Link to="/"><a class="navbar-brand ms-4" href="#">
+                  <img class="logo" src="./images/logo2.png" alt=""/>
+                    </a></Link>
 
                     <div class="navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <Link to="/"><a class="nav-link tx_bold active" href="#">DASHBOARD</a></Link>
+                            <Link to="/"><a class="nav-link tx_bold active" href="#">DASHBOARD</a></Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/jobs"><a class="nav-link tx_bold" href="#">JOBS</a></Link>
+                            <Link to="/DashBoard03"><a class="nav-link tx_bold" href="#">JOBS</a></Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/Getway01"><a class="nav-link tx_bold" href="#">RESUMES</a></Link>
+                            <Link to="/Getway05"><a class="nav-link tx_bold" href="#">RESUMES</a></Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/Getway01"><a class="nav-link tx_bold" href="#">COVER LETTERS</a></Link>
+                            <Link to="/Getway05"><a class="nav-link tx_bold" href="#">COVER LETTERS</a></Link>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +59,7 @@ export default function Heder_nav() {
                                                 <img class="dropimg" src="./images/setting.png" alt=""/>
                                             </div>
                                             <div class="col-8">
-                                            <Link to="/setting"><h5 class="texmat">Settings</h5></Link>
+                                            <Link to="/DashBoard02"><h5 class="texmat">Settings</h5></Link>
                                             </div>
                                         </div>
                                     </a></li>

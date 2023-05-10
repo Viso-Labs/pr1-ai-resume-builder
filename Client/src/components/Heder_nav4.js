@@ -1,6 +1,5 @@
 import "./Heder_nav2.css";
 import React from 'react'
-import { Link } from "react-router-dom";
 
 
 
@@ -12,49 +11,69 @@ export default function Heder_nav2() {
 
                     <nav class="navbar navbar-expand-lg">
                         <div class="container-fluid">
-                        <Link to="/"><a class="navbar-brand ms-4" href="#">
+                            <a class="navbar-brand ms-4" href="#">
                            <img class="logo" src="./images/logo2.png" alt="" />
-                            </a></Link>
+                            </a>
 
                             <div>
                                 <ul class="navbar-nav2 me-2">
-                                    <li class="nav-item dropdown me-3 mt-3">
+                                <li class="nav-item dropdown me-3 mt-3">
                                         <div className="row">
                                             <div className="nav_png col-3">
                                                 <img src="./images/yes.png" alt="" />
                                             </div>
-                                            <div className="mt-1 all_center col-9">
-                                                <h6 className="color_dark">BUILD_RESUME</h6>
+                                            <div className="mt-1 all_center col-8">
+                                                <h6 className="color_dark">HEADING</h6>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown me-3 mt-3">
                                         <div className="row">
-                                            <div className="nav_png col-3">
+                                        <div className="nav_png col-3">
                                                 <h4 className="mt-1 color_white">2</h4>
                                             </div>
                                             <div className="mt-1 all_center col-9">
-                                                <h6 className="color_dark">CHOOSE_ACCESS</h6>
+                                                <h6 className="color_dark">WORK_HISTORY</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown me-3 mt-3">
+                                        <div className="row">
+                                        <div className="nav_png col-3">
+                                                <h4 className="mt-1 color_white">3</h4>
+                                            </div>
+                                            <div className="mt-1 all_center col-8">
+                                                <h6 className="color_dark">EDUCATION</h6>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown me-3 mt-3">
                                         <div className="row">
                                             <div className="nav_png col-3">
-                                            <h4 className="mt-1 color_white">3</h4>
+                                                <h4 className="mt-1 color_white">4</h4>
                                             </div>
-                                            <div className="mt-1 all_center col-9">
-                                                <h6 className="color_dark">PAYMENT_DETAILS</h6>
+                                            <div className="mt-1 all_center col-7">
+                                                <h6 className="color_dark">SKILLS</h6>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown me-3 mt-3">
                                         <div className="row">
                                             <div className="nav_png col-3">
-                                            <h4 className="mt-1 color_white">4</h4>
+                                            <h4 className="mt-1 color_white">5</h4>
                                             </div>
-                                            <div className="mt-1 all_center col-9">
-                                                <h6 className="color_dark">All_FINISHED!</h6>
+                                            <div className="mt-1 all_center col-7">
+                                                <h6 className="color_dark">SUMMARY</h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown me-3 mt-3">
+                                        <div className="row">
+                                            <div className="nav_png col-3">
+                                            <h4 className="mt-1 color_white">6</h4>
+                                            </div>
+                                            <div className="mt-1 all_center col-7">
+                                                <h6 className="color_dark">FINISHED!</h6>
                                             </div>
                                         </div>
                                     </li>

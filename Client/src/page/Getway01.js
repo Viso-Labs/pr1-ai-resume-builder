@@ -10,8 +10,6 @@ export default function Getway01() {
 
       <Heder_nav2 />
 
-
-
       <div class="row bg_centerBox2">
         <div class="col-12 d-flex justify-content-center mt-5">
           <h4 class="tx_white">Choose Payment Methods</h4>
@@ -24,9 +22,9 @@ export default function Getway01() {
               </div>
             </div>
             <div className='justify-center col-12 d-flex'>
-              <div className='justify-center row d-flex'>
-              <Link to="/Getway02"><img className='paypal_img' src="./images/paypal.png" alt="" /></Link>
-              </div>
+            <Link to="/Getway02"><div className='justify-center row d-flex'>
+              <img className='paypal_img' src="./images/paypal.png" alt="" />
+              </div></Link>
             </div>
             <div className='justify-center col-12 d-flex'>
               <div className='row'>
@@ -44,7 +42,7 @@ export default function Getway01() {
 
             <div className='justify-center col-12 d-flex'>
               <div className='justify-center row d-flex'>
-              <Link to="/Getway02"><img className='paypal_img' src="./images/script.png" alt="" /></Link>
+              <img className='paypal_img' src="./images/script.png" alt="" />
               </div>
             </div>
 
