@@ -4,7 +4,6 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy.css";
-import { Link } from 'react-router-dom';
 
 
 
@@ -73,7 +72,7 @@ export default function WorkHistoy() {
                                             <h6 className='mt-2 ms-3 me-3 tx54'>SKIP FOR NOW</h6>
                                         </div>
                                         <div className='nextbtn2'>
-                                            <Link to="/WorkHistoy2"><h4 className='mt-2'>Next</h4></Link>
+                                            <h4 className='mt-2'>Next</h4>
                                         </div>
                                     </div>
                                 </div>

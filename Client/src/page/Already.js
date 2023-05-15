@@ -21,7 +21,7 @@ export default function Already() {
               <div className="mt-5 row">
                 <div className="justify-center align-bottom col-3 d-flex full_het">
                   <div className="back_sig">
-                    <h4>BACK</h4>
+                  <Link to="/ChooseLeter"><h4>BACK</h4></Link>
                   </div>
                 </div>
                 <div className="justify-center align-bottom col-6 d-flex full_het">
@@ -47,7 +47,7 @@ export default function Already() {
                 </div>
                 <div className="justify-center align-bottom col-3 d-flex full_het">
                   <div className="nex_sig">
-                    <Link to="/Experience"><h4>NEXT</h4></Link>
+                  <Link to="/Experience"><h4>NEXT</h4></Link>
                   </div>
                 </div>
               </div>

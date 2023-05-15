@@ -2,7 +2,6 @@ import React from 'react'
 import "./Getway01.css";
 import Footer from "../components/Footer";
 import Heder_nav2 from "../components/Heder_nav2";
-import { Link } from "react-router-dom";
 
 export default function Getway01() {
   return (
@@ -22,9 +21,9 @@ export default function Getway01() {
               </div>
             </div>
             <div className='justify-center col-12 d-flex'>
-            <Link to="/Getway02"><div className='justify-center row d-flex'>
+          <div className='justify-center row d-flex'>
               <img className='paypal_img' src="./images/paypal.png" alt="" />
-              </div></Link>
+              </div>
             </div>
             <div className='justify-center col-12 d-flex'>
               <div className='row'>

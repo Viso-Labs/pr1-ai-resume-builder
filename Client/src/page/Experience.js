@@ -22,9 +22,9 @@ export default function Experience() {
                   <h4 className="">We'll find the best templates for your experience level.</h4>
                 </div>
               </div>
-              <div className="mt-5 row marbottnm3">
+              <Link to="/SelectCoun"><div className="mt-5 row marbottnm3">
                 {/* <div className="col-12"> */}
-                  <Link to="/SelectCoun"><div className="justify-center col-12 d-flex">
+                  <div className="justify-center col-12 d-flex">
                     <div className="mt-2 mb-2 experiBox ms-2 me-2">
                       <h3 className="experiTX">No Experience</h3>
                     </div>
@@ -38,9 +38,8 @@ export default function Experience() {
                       <h3 className="experiTX">5- 10+ Years</h3>
                     </div>
                   </div>
-                  </Link>
                 {/* </div> */}
-              </div>
+              </div></Link>
             </div>
           </div>
 

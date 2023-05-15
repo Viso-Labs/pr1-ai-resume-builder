@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import Heder_nav2 from "../components/Heder_nav2";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Link } from "react-router-dom";
 
 export default function Getway03() {
   return (
@@ -21,7 +20,7 @@ export default function Getway03() {
             <h5 className='ms-5'>Transaction receipt</h5>
             </div>
             <div className='justify-end col-6 d-flex'>
-            <Link to="/Getway04"><h6 className='color_blue me-5'>PROCEED</h6></Link>
+          <h6 className='color_blue me-5'>PROCEED</h6>
             </div>
           </div>
 

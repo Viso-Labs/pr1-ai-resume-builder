@@ -8,7 +8,7 @@ export default function Footer() {
     <div class="row">
     <div class="col-12">
         <div class="row bg_footer">
-            <div class="col-12 mt-5 color_footer mt-5">
+            <div class="col-12 mt-5 color_footer">
                 <div class="row ms-2 me-2">
                     <div class="col-8">
                         <div class="row mt-3">

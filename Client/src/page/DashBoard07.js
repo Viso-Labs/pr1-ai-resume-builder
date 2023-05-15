@@ -3,7 +3,6 @@ import "./DashBoard07.css";
 import Footer from "../components/Footer";
 import Heder_nav from "../components/Heder_nav";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
 
 export default function DashBoard07() {
   return (
@@ -18,16 +17,16 @@ export default function DashBoard07() {
                 <div class="WhiteBox mt-5 ms-5 me-5">
                   <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-12 d-flex justify-content-center">
-                      <Link to="/DashBoard02"><h4 class="mt-4" style={{ color: '#0560A4' }}>General Account Settings</h4></Link>
+                     <h4 class="mt-4" style={{ color: '#0560A4' }}>General Account Settings</h4>
                     </div>
                     <div class="col-12 mt-4 ms-4">
-                      <Link to="/DashBoard04"><h4 class="mt-3 ms-3">Subscription</h4></Link>
+              <h4 class="mt-3 ms-3">Subscription</h4>
                     </div>
                     <div class="col-12 mt-3 ms-4">
-                      <Link to="/DashBoard06"><h4 class="mt-3 ms-3">Communication Preferences</h4></Link>
+                 <h4 class="mt-3 ms-3">Communication Preferences</h4>
                     </div>
                     <div class="col-12 mt-3 ms-4">
-                      <Link to="/DashBoard07"> <h4 class="mt-3 ms-3">Privacy Settings</h4></Link>
+                   <h4 class="mt-3 ms-3">Privacy Settings</h4>
                     </div>
                   </div>
                 </div>

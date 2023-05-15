@@ -1,6 +1,5 @@
 import "./Heder_nav2.css";
 import React from 'react'
-import { Link } from "react-router-dom";
 
 
 
@@ -12,9 +11,9 @@ export default function Heder_nav2() {
 
                     <nav class="navbar navbar-expand-lg">
                         <div class="container-fluid">
-                        <Link to="/"><a class="navbar-brand ms-4" href="#">
+                        <a class="navbar-brand ms-4" href="#">
                            <img class="logo" src="./images/logo2.png" alt="" />
-                            </a></Link>
+                            </a>
 
                             <div>
                                 <ul class="navbar-nav2 me-2">

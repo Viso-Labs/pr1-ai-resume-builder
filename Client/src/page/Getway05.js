@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Heder_nav2 from "../components/Heder_nav2";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Link } from "react-router-dom";
+
 
 export default function Getway05() {
   return (
@@ -111,7 +111,7 @@ export default function Getway05() {
 
                   <div className='justify-center mt-5 ms-3 me-3 row d-flex'>
                     <div className='mb-4 continue_btn'>
-                    <Link to="/Getway01"><h4 className='mt-1 color_white'>CONTINUE</h4></Link>
+                <h4 className='mt-1 color_white'>CONTINUE</h4>
                     </div>
                   </div>
                 </div>

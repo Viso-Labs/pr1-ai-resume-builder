@@ -76,7 +76,7 @@ export default function SelectCoun() {
                   <div className="mt-5 row">
                     <div className="col-12">
                       <div className="BtnSeeTemp">
-                        <Link to="/WorkHistoy"><h5>SEE TEMPLATES</h5></Link>
+                        <Link to="/ChooseTemplate"><h5>SEE TEMPLATES</h5></Link>
                       </div>
                     </div>
                   </div>

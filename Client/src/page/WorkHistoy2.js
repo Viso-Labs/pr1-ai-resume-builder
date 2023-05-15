@@ -4,6 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy2.css";
+// import { Link } from 'react-router-dom';
 
 
 
@@ -44,7 +45,7 @@ export default function WorkHistoy2() {
                                 <div className='mt-5 mb-5 row ms-5 me-5'>
                                     <div className='justify-start col-6 d-flex'>
                                         <div className='backbtn'>
-                                            <h4 className='mt-2'>BACK</h4>
+                                        <h4 className='mt-2'>BACK</h4>
                                         </div>
                                     </div>
                                     <div className='justify-end col-6 d-flex'>
@@ -52,7 +53,7 @@ export default function WorkHistoy2() {
                                             <h6 className='mt-2 ms-3 me-3 tx54'>SKIP FOR NOW</h6>
                                         </div>
                                         <div className='nextbtn2'>
-                                            <h4 className='mt-2'>Next</h4>
+                                           <h4 className='mt-2'>Next</h4>
                                         </div>
                                     </div>
                                 </div>

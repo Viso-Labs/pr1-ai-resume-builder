@@ -57,7 +57,7 @@ export default function LogIn() {
                             </div>
                             <div className='justify-center mt-5 col-12 d-flex'>
                                 <div className='signinbtn'>
-                                    <Link to="/SignUp"><h3>SIGN IN</h3></Link>
+                                    <Link to="/DashBoard01"><h3>SIGN IN</h3></Link>
                                 </div>
                             </div>
                             <div className='justify-center mt-3 mb-3 col-12 d-flex'>

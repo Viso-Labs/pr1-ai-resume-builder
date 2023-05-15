@@ -1,6 +1,5 @@
 import "./Heder_nav.css";
 import React from 'react'
-import { Link } from "react-router-dom";
 
 
 
@@ -12,23 +11,23 @@ export default function Heder_nav() {
 
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
-                    <Link to="/"><a class="navbar-brand ms-4" href="#">
+                   <a class="navbar-brand ms-4" href="#">
                   <img class="logo" src="./images/logo2.png" alt=""/>
-                    </a></Link>
+                    </a>
 
                     <div class="navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <Link to="/"><a class="nav-link tx_bold active" href="#">DASHBOARD</a></Link>
+                          <a class="nav-link tx_bold active" href="#">DASHBOARD</a>
                             </li>
                             <li class="nav-item">
-                            <Link to="/DashBoard03"><a class="nav-link tx_bold" href="#">JOBS</a></Link>
+                          <a class="nav-link tx_bold" href="#">JOBS</a>
                             </li>
                             <li class="nav-item">
-                            <Link to="/Getway05"><a class="nav-link tx_bold" href="#">RESUMES</a></Link>
+                          <a class="nav-link tx_bold" href="#">RESUMES</a>
                             </li>
                             <li class="nav-item">
-                            <Link to="/Getway05"><a class="nav-link tx_bold" href="#">COVER LETTERS</a></Link>
+                  <a class="nav-link tx_bold" href="#">COVER LETTERS</a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +58,7 @@ export default function Heder_nav() {
                                                 <img class="dropimg" src="./images/setting.png" alt=""/>
                                             </div>
                                             <div class="col-8">
-                                            <Link to="/DashBoard02"><h5 class="texmat">Settings</h5></Link>
+                                      <h5 class="texmat">Settings</h5>
                                             </div>
                                         </div>
                                     </a></li>

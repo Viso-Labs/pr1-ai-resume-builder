@@ -68,7 +68,7 @@ export default function ChooseLeter() {
                   <div className="row">
                     <div className="justify-start col-6 d-flex">
                       <div className="back_sig">
-                        <h4>BACK</h4>
+                      <Link to="/SignUp"><h4>BACK</h4></Link>
                       </div>
                     </div>
                     <div className="justify-end col-6 d-flex">
