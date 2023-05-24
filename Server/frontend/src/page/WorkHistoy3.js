@@ -199,7 +199,7 @@ export default function WorkHistoy3() {
                                                     </div>
                                                     <div className='col-4'>
                                                     <div onClick={cut} className='row btn_ok'>
-                                                  <p className='mt-2'>OK</p>
+                                                     <p className='mt-2'>OK</p>
                                                     </div>
                                                     </div>
                                                 </div> 
