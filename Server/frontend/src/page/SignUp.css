@@ -1,0 +1,63 @@
+.leftSignup {
+    background: rgba(145, 208, 255, 0.45);
+}
+
+.hedtxsignup {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 82px;
+    text-align: center;
+}
+
+.numberBox {
+    width: 68px;
+    height: 68px;
+    background: #91D0FF;
+    border: 2px solid rgba(5, 96, 164, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signrighimg{
+    width: 70%;
+    margin-top: -10%;
+}
+.creMyREBTN{
+    background-color: #0560A4 !important;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.sig7nTxP{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000; 
+}
+
+.tx_foSign{
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 27px;
+
+color: rgba(0, 0, 0, 0.46);
+}
+.poti_setSIgn{
+    position: absolute;
+    bottom: -250px;
+    /* left: 25%; */
+}
+.marbottnm{
+    margin-bottom: 300px;
+}

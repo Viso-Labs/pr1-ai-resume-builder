@@ -1,0 +1,105 @@
+.bg_centerBox2 {
+    background: #0560A4;
+    min-height: 100dvh;
+    max-height: 100%;
+}
+
+.color_darckYellow {
+    margin-left: 20%;
+    margin-right: 20%;
+    height: fit-content;
+    background: #FFBE55;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.color_white {
+    color: white;
+}
+
+.paypal_img {
+    width: 300px;
+    height: 150px;
+}
+
+.borderWhite2 {
+    color: white;
+    border-width: 3px;
+    width: 200px;
+}
+
+.round_btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    background: #0560A4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock_png {
+    width: 80%;
+}
+
+.bg_blue {
+    background: #0560A4;
+}
+
+.bg_white {
+    background-color: white;
+}
+
+.box_fream {
+    border: 1px solid black;
+}
+
+.cart_png {
+    width: 100%;
+}
+
+.logo_paypal {
+    width: 40%;
+}
+
+.cart_wallet_png {
+    width: 8%;
+}
+
+.btn_login {
+    width: 100%;
+    height: 40px;
+    background: #0560A4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.color_blue {
+    color: #0560A4;
+}
+
+.tx_bold {
+    font-weight: bold;
+}
+
+.bg_darck {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    height: 50px;
+}
+
+.border_blue {
+    border: 5px solid blue;
+}
+
+.pay_btn {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0560A4;
+    box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.12), 0px 2px 5px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}

@@ -1,0 +1,171 @@
+.leftSignup {
+    background: rgba(145, 208, 255, 0.45);
+}
+
+.hedtxsignup {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 82px;
+    text-align: center;
+}
+
+.numberBox {
+    width: 68px;
+    height: 68px;
+    background: #91D0FF;
+    border: 2px solid rgba(5, 96, 164, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signrighimg {
+    width: 70%;
+    margin-top: -10%;
+}
+
+.creMyREBTN {
+    background-color: #0560A4 !important;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.sig7nTxP {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+}
+
+.tx_foSign {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: rgba(0, 0, 0, 0.46);
+}
+
+.poti_setSIgn {
+    position: absolute;
+    bottom: 40px;
+    /* left: 25%; */
+}
+
+.marbottnm3 {
+    margin-bottom: 250px;
+}
+
+.cho_tx {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 41px;
+    text-align: center;
+    color: #70AFDD;
+}
+
+.choosBox {
+    background: #FFFFFF;
+    border: 1px solid #0560A4;
+    width: 498px;
+    min-height: 342px;
+    height: fit-content;
+}
+
+.clas_tx {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.fix_up {
+    margin-top: -50px;
+}
+
+.back_sig {
+    width: 189px;
+    height: 60px;
+    border: 2px solid #0560A4;
+    justify-content: center;
+    align-items: center;
+    color: #0560A4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nex_sig {
+    width: 189px;
+    height: 60px;
+    background: #F82C2C;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experiBox1 {
+    width: 252px;
+    min-height: 106px;
+    height: fit-content;
+    border: 1px solid #70AFDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.experiBox2 {
+    width: 252px;
+    min-height: 106px;
+    height: fit-content;
+    border: 1px solid #70AFDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.experiBox3 {
+    width: 252px;
+    min-height: 106px;
+    height: fit-content;
+    border: 1px solid #70AFDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.experiBox4 {
+    width: 252px;
+    min-height: 106px;
+    height: fit-content;
+    border: 1px solid #70AFDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experiTX {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+}
