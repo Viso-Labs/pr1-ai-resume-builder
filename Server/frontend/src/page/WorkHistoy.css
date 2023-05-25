@@ -118,7 +118,7 @@
 
 .bg_input_list {
     background-color: #409CB5;
-    border-right: hidden;
+    /* border-right: hidden; */
 }
 
 .bg_input_list:focus {
@@ -203,7 +203,46 @@
 
 .inlist {
     min-height: 60px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 33px;
+    color: #E2EFF9;
+    opacity: 1;
 }
+.borderselect1{
+    border: 1px solid white;
+    border-radius: 6px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+    min-height: 60px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 33px;
+    color: #E2EFF9;
+}
+
+.borderselect2{
+    border: 1px solid white;
+    border-radius: 6px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+    min-height: 60px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 33px;
+    color: #E2EFF9;
+}
+
 
 .inlist::placeholder {
     font-family: 'Open Sans';

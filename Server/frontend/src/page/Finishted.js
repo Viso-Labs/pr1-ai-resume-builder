@@ -4,10 +4,20 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./Finishted.css";
+import { Link } from 'react-router-dom';
 
 
 
 export default function Finishted() {
+
+
+    const cut = () => {
+        const popbox = document.getElementsByClassName("bg_popboxfinish");
+        popbox[0].style.position = "absolute";
+        popbox[0].style.visibility = "hidden";
+      };
+
+
     return (
         <div>
             <div>
@@ -138,7 +148,7 @@ export default function Finishted() {
                                                                     aria-describedby="basic-addon2"
                                                                 />
                                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                                    {/* <img src="./images/hari.png" alt="" /> */}
+                                                                    {/* <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" /> */}
                                                                 </InputGroup.Text>
                                                             </InputGroup>
                                                         </div>
@@ -157,17 +167,17 @@ export default function Finishted() {
 
                                 <div className='mt-5 mb-5 row ms-5 me-5'>
                                     <div className='justify-start mt-5 col-6 d-flex'>
-                                        <div className='backbtn'>
+                                    <Link to="/SMMERYfinish3"><div className='backbtn'>
                                             <h4 className='mt-2'>BACK</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                     <div className='justify-end mt-5 col-6 d-flex'>
                                         <div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'></h6>
                                         </div>
-                                        <div className='nextbtn2'>
+                                        <Link to="/Finnishsec"><div className='nextbtn2'>
                                             <h4 className='mt-2'>Next</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +215,7 @@ export default function Finishted() {
                             <div className='col-5'></div>
 
                             <div className='justify-end col-1 d-flex'>
-                                <img className='mt-4 mb-3 me-5' src="./images/cut.png" alt="" />
+                                <img onClick={cut} className='mt-4 mb-3 me-5' src="./images/cut.png" alt="" />
                             </div>
                         </div>
                         <div className='mt-5 mb-5 row'>

@@ -1,10 +1,10 @@
-import {React,useState} from 'react'
+import { React, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./Creation.css";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -26,10 +26,10 @@ export default function Creation() {
         setFirst_Name(event.target.value);
         var id = document.getElementById("fristnamehari");
         if (First_Name !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
         }
@@ -41,10 +41,10 @@ export default function Creation() {
         setSurname(event.target.value);
         var id = document.getElementById("Surnamehari");
         if (Surname !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
             id.style.display = "none";
 
         }
@@ -57,10 +57,10 @@ export default function Creation() {
         var id = document.getElementById("Professionhari");
 
         if (Profession !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
         }
@@ -72,26 +72,26 @@ export default function Creation() {
         setDistrict(event.target.value);
         var id = document.getElementById("Districthari");
         if (District !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
         }
 
     };
 
-    const changeCountry= (event) => {
+    const changeCountry = (event) => {
 
         setCountry(event.target.value);
         var id = document.getElementById("Countryhari");
 
         if (Country !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
             id.style.display = "none";
 
         }
@@ -104,10 +104,10 @@ export default function Creation() {
         var id = document.getElementById("Postal_Codehari");
 
         if (Postal_Code !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
 
@@ -115,16 +115,16 @@ export default function Creation() {
 
     };
 
-    const changePhone= (event) => {
+    const changePhone = (event) => {
 
         setPhone(event.target.value);
         var id = document.getElementById("Phonehari");
 
         if (Phone !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
 
@@ -138,10 +138,10 @@ export default function Creation() {
         var id = document.getElementById("Emailhari");
 
         if (Email !== "") {
-            
+
             id.style.display = "block";
         }
-        else{
+        else {
 
             id.style.display = "none";
 
@@ -149,11 +149,68 @@ export default function Creation() {
 
     };
 
-    const next_WH = () =>{
+    const next_WH = () => {
 
-        sessionStorage.setItem("head2", true);
-        navigate("/WorkHistoy");
-        
+        if (First_Name === "") {
+            var id = document.getElementById("fristnamehari");
+            id.style.display = "none";
+            alert("Fill the Frist name!");
+
+        }
+        else if (Surname=== "") {
+
+            var id = document.getElementById("Surnamehari");
+            id.style.display = "none";
+            alert("Fill the Surname!");
+
+        }
+        else if (Profession === "") {
+
+            var id = document.getElementById("Professionhari");
+            id.style.display = "none";
+            alert("Fill the Profession!");
+
+        }
+        else if (District === "") {
+
+            var id = document.getElementById("Districthari");
+            id.style.display = "none";
+            alert("Fill the District!");
+
+        }
+        else if (Country === "") {
+
+            var id = document.getElementById("Countryhari");
+            id.style.display = "none";
+            alert("Fill the Country!");
+
+        }
+        else if (Postal_Code === "") {
+
+            var id = document.getElementById("Postal_Codehari");
+            id.style.display = "none";
+            alert("Fill the Postal_Code!");
+
+        }
+        else if (Phone === "") {
+            var id = document.getElementById("Phonehari");
+            id.style.display = "none";
+            alert("Fill the Phone!");
+
+        }
+        else if (Email === "") {
+            var id = document.getElementById("Emailhari");
+            id.style.display = "none";
+            alert("Fill the Email!");
+
+        }
+        else{
+            sessionStorage.setItem("head2", true);
+            navigate("/WorkHistoy");
+        }
+
+
+
     }
 
 
@@ -186,7 +243,7 @@ export default function Creation() {
                                                     type='name'
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="fristnamehari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="fristnamehari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -204,7 +261,7 @@ export default function Creation() {
                                                     type='name'
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                <img id ="Surnamehari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="Surnamehari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -224,7 +281,7 @@ export default function Creation() {
                                                     type='name'
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                <img id ="Professionhari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="Professionhari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -244,7 +301,7 @@ export default function Creation() {
                                                     type='name'
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                <img id ="Districthari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="Districthari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -264,7 +321,7 @@ export default function Creation() {
                                                             type='country'
                                                         />
                                                         <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                        <img id ="Countryhari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                            <img id="Countryhari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                         </InputGroup.Text>
                                                     </InputGroup>
                                                 </div>
@@ -282,7 +339,7 @@ export default function Creation() {
                                                             type='number'
                                                         />
                                                         <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                        <img id ="Postal_Codehari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                            <img id="Postal_Codehari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                         </InputGroup.Text>
                                                     </InputGroup>
                                                 </div>
@@ -304,7 +361,7 @@ export default function Creation() {
                                                     type='tel'
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                <img id ="Phonehari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="Phonehari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -323,7 +380,7 @@ export default function Creation() {
                                                     required
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                <img id ="Emailhari" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="Emailhari" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -332,12 +389,12 @@ export default function Creation() {
 
                                 <div className='mt-3 mb-5 row ms-4 me-4'>
                                     <div className='justify-start col-6 d-flex'>
-                                    <Link to="/ChooseLeter"><div className='backbtn'>
+                                        <Link to="/ChooseLeter"><div className='backbtn'>
                                             <h4 className='mt-2'>BACK</h4>
                                         </div></Link>
                                     </div>
                                     <div onClick={next_WH} className='justify-end col-6 d-flex'>
-                                    <div className='nextbtn_his'>
+                                        <div className='nextbtn_his'>
                                             <h4 className='mt-2'>Next: Working History</h4>
                                         </div>
                                     </div>

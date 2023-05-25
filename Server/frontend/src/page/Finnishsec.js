@@ -5,6 +5,7 @@ import Footer3 from "../components/Footer3";
 import Heder_nav7 from "../components/Heder_nav7";
 import Dropdown from 'react-bootstrap/Dropdown';
 import "./Finnishsec.css";
+import { Link } from "react-router-dom";
 
 export default function Finnishsec() {
   return (
@@ -36,7 +37,7 @@ export default function Finnishsec() {
                     aria-describedby="basic-addon2"
                   />
                   <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                    {/* <img src="./images/hari.png" alt="" /> */}
+                    {/* <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" /> */}
                   </InputGroup.Text>
                 </InputGroup>
               </div>
@@ -68,15 +69,15 @@ export default function Finnishsec() {
         </div>
 
         <div className="'row potiback">
-          <div className="col-12">
+          <Link to="/Finishted"><div className="col-12">
             <img src="./images/BACK.png" alt="" />
-          </div>
+          </div></Link>
         </div>
 
         <div className="'row potinext">
-          <div className="col-12">
+         <Link to="/Finnishsec2"><div className="col-12">
             <img src="./images/NEXT.png" alt="" />
-          </div>
+          </div></Link>
         </div>
 
         <Footer3 />

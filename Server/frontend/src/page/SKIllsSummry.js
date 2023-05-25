@@ -4,6 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./SKIllsSummry.css";
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 
@@ -44,17 +45,17 @@ export default function SKIllsSummry() {
 
                                 <div className='mt-5 mb-5 row ms-5 me-5'>
                                     <div className='justify-start mt-5 col-6 d-flex'>
-                                        <div className='backbtn'>
+                                    <Link to="/SKIllPic"><div className='backbtn'>
                                        <h4 className='mt-2'>BACK</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                     <div className='justify-end mt-5 col-6 d-flex'>
                                         <div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'></h6>
                                         </div>
-                                        <div className='nextbtn2'>
+                                        <Link to="/SMMERY01"><div className='nextbtn2'>
                                   <h4 className='mt-2'>Next</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                 </div>
                             </div>

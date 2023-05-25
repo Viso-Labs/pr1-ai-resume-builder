@@ -41,7 +41,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -57,7 +57,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -75,7 +75,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -91,7 +91,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -109,7 +109,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -125,7 +125,7 @@ export default function WorkHistoy3() {
                                                     aria-describedby="basic-addon2"
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>

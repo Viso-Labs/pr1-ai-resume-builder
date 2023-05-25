@@ -4,10 +4,19 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./SKIllPic.css";
+import { Link,useNavigate } from 'react-router-dom';
 
 
 
 export default function SKIllPic() {
+    const navigate = useNavigate();
+    
+    const next_SUM = () =>{
+
+        sessionStorage.setItem("head5", true);
+        navigate("/SKIllsSummry");
+        
+    }
     return (
         <div>
             <div>
@@ -32,7 +41,7 @@ export default function SKIllPic() {
                                                 aria-describedby="basic-addon2"
                                             />
                                             <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                {/* <img src="./images/hari.png" alt="" /> */}
+                                                {/* <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" /> */}
                                             </InputGroup.Text>
                                         </InputGroup>
                                     </div>
@@ -166,12 +175,12 @@ export default function SKIllPic() {
                                         </div>
                                         <div className='mt-3 mb-5 row'>
                                             <div className='justify-start col-6 d-flex'>
-                                                <div className='backbtn'>
+                                            <Link to="/EducationPreveiw"><div className='backbtn'>
                                                     <h4 className='mt-2'>BACK</h4>
-                                                </div>
+                                                </div></Link>
                                             </div>
                                             <div className='justify-end col-6 d-flex'>
-                                                <div className='nextbtn2'>
+                                            <div className='nextbtn2' onClick={next_SUM}>
                                              <h4 className='mt-2'>Next</h4>
                                                 </div>
                                             </div>

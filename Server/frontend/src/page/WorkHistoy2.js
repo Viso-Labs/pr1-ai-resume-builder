@@ -53,9 +53,9 @@ export default function WorkHistoy2() {
                                         <Link to="/WorkHistoy3"><div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'>SKIP FOR NOW</h6>
                                         </div></Link>
-                                        <div className='nextbtn2'>
+                                        <Link to="/WorkHistoy3"><div className='nextbtn2'>
                                            <h4 className='mt-2'>Next</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                 </div>
                             </div>

@@ -37,6 +37,8 @@ import ResumBuilder from "./page/ResumBuilder";
 import ResumTemp from "./page/ResumTemp";
 import ResumExample from "./page/ResumExample";
 import ResumExample2 from "./page/ResumExample2";
+import Finnishsec from "./page/Finnishsec";
+import Finnishsec2 from "./page/Finnishsec2";
 import Finnishsec3 from "./page/Finnishsec3";
 import Finnishsec4 from "./page/Finnishsec4";
 import Finishted from "./page/Finishted";
@@ -50,10 +52,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/Finnishsec3" element={<Finnishsec3 />} />
-        <Route path="/Finnishsec4" element={<Finnishsec4  />} />
-        <Route path="/Finishted" element={<Finishted/>} />
-        <Route path="/SMMERY01" element={<SMMERY01 />} />
+        <Route path="/Finnishsec" element={<Finnishsec/>} />
+        <Route path="/Finnishsec2" element={<Finnishsec2/>} />
+        <Route path="/Finnishsec3" element={<Finnishsec3/>} />
+        <Route path="/Finnishsec4" element={<Finnishsec4 />} />
+        <Route path="/Finishted" element={<Finishted/>}/>
+        <Route path="/SMMERY01" element={<SMMERY01 />}/>
         <Route path="/SMMERYfinish" element={<SMMERYfinish />} />
         <Route path="/SMMERYfinish2" element={<SMMERYfinish2 />} />
         <Route path="/SMMERYfinish3" element={<SMMERYfinish3 />} />

@@ -1,16 +1,113 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy3.css";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 
 export default function WorkHistoy3() {
 
     const navigate = useNavigate();
+
+    
+    const [title, settitle] = useState('')
+    const [employee, setemployee] = useState('');
+    const [city, setcity] = useState('')
+    const [country, setcountry] = useState('');
+    const [startdate, setstartdate] = useState('')
+    const [enddate, setenddate] = useState('');
+
+    const changetitle = (event) => {
+
+        settitle(event.target.value);
+        var id = document.getElementById("titleid");
+        if (title !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changeemployee = (event) => {
+
+        setemployee(event.target.value);
+        var id = document.getElementById("employeeid");
+        if (employee !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+            id.style.display = "none";
+
+        }
+
+    };
+    const changecity = (event) => {
+
+        setcity(event.target.value);
+        var id = document.getElementById("cityid");
+
+        if (city !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changecountry = (event) => {
+
+        setcountry(event.target.value);
+        var id = document.getElementById("countryid");
+        if (country !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changestartdate = (event) => {
+
+        setstartdate(event.target.value);
+        var id = document.getElementById("startdateid");
+
+        if (startdate !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+            id.style.display = "none";
+
+        }
+
+    };
+    const changeenddate = (event) => {
+
+        setenddate (event.target.value);
+        var id = document.getElementById("enddateid");
+
+        if (enddate  !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+
+        }
+
+    };
 
     const cut = () => {
         const popbox = document.getElementsByClassName("masgBox");
@@ -20,8 +117,53 @@ export default function WorkHistoy3() {
 
       const next_education = () =>{
 
-        sessionStorage.setItem("head3", true);
-        navigate("/Noexperience");
+        if (title === "") {
+            var id = document.getElementById("titleid");
+            id.style.display = "none";
+            alert("Fill the title!");
+
+        }
+        else if (employee=== "") {
+
+            var id = document.getElementById("employeeid");
+            id.style.display = "none";
+            alert("Fill the employee!");
+
+        }
+        else if (city === "") {
+
+            var id = document.getElementById("cityid");
+            id.style.display = "none";
+            alert("Fill the city!");
+
+        }
+        else if (country === "") {
+
+            var id = document.getElementById("countryid");
+            id.style.display = "none";
+            alert("Fill the country!");
+
+        }
+        else if (startdate === "") {
+
+            var id = document.getElementById("startdateid");
+            id.style.display = "none";
+            alert("Fill the startdate!");
+
+        }
+        else if (enddate === "") {
+
+            var id = document.getElementById("enddateid");
+            id.style.display = "none";
+            alert("Fill the enddate!");
+
+        }
+        else{
+            sessionStorage.setItem("head3", true);
+            navigate("/Noexperience");
+        }
+
+
         
     }
 
@@ -55,9 +197,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='name'
+                                                    onChange={changetitle}
                                                 />
-                                                <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                <InputGroup.Text  className='bg_input_list_mini' id="basic-addon2">
+                                                    <img id ="titleid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -71,9 +215,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='name'
+                                                    onChange={changeemployee}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="employeeid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -89,9 +235,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='name'
+                                                    onChange={changecity}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="cityid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -105,9 +253,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='name'
+                                                    onChange={changecountry}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="countryid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -123,9 +273,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='date'
+                                                    onChange={changestartdate}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="startdateid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -139,9 +291,11 @@ export default function WorkHistoy3() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type='date'
+                                                    onChange={changeenddate}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img src="./images/hari.png" alt="" />
+                                                    <img id ="enddateid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -161,12 +315,12 @@ export default function WorkHistoy3() {
 
                                 <div className='mt-3 mb-5 row ms-4 me-4'>
                                     <div className='justify-start col-6 d-flex'>
-                                        <div className='backbtn'>
+                                    <Link to="/WorkHistoy2"><div className='backbtn'>
                                             <h4 className='mt-2'>BACK</h4>
-                                        </div>
+                                        </div></Link>
                                     </div>
                                     <div className='justify-end col-6 d-flex'>
-                                        <div className='nextbtn2'>
+                                    <div className='nextbtn2' onClick={next_education}>
                                             <h4 className='mt-2'>Next</h4>
                                         </div>
                                     </div>

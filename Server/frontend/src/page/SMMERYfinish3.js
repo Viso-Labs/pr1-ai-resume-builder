@@ -6,8 +6,19 @@ import Heder_nav4 from "../components/Heder_nav4";
 import "./SMMERYfinish3.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { Link,useNavigate } from "react-router-dom";
 
 export default function SMMERYfinish3() {
+
+  const navigate = useNavigate();
+    
+  const next_Finsh = () =>{
+
+      sessionStorage.setItem("head6", true);
+      navigate("/Finishted");
+      
+  }
+
   return (
     <div>
       <div>
@@ -22,7 +33,7 @@ export default function SMMERYfinish3() {
                   <div className="col-12">
                     <div className="row">
                       <div className="justify-start col-12 d-flex">
-                      <h4 className="txblue_d">What are your affiliations?</h4>
+                        <h4 className="txblue_d">What are your affiliations?</h4>
                       </div>
                     </div>
                     <div className="row">
@@ -32,7 +43,7 @@ export default function SMMERYfinish3() {
                         wrapperClassName="wrapperClassName"
                         editorClassName="editorClassName"
                         wrapperStyle={{
-                          marginLeft:40,
+                          marginLeft: 40,
                           width: '92%',
                           height: 650,
                           border: "1px solid black",
@@ -42,21 +53,25 @@ export default function SMMERYfinish3() {
 
 
 
-                    <div className="mt-5 mb-5 ms-4 me-4 row">
-                      <div className="justify-start col-6 d-flex">
-                        <div className="backbtn">
-                          <h4 className="mt-2">BACK</h4>
-                        </div>
-                      </div>
-                      <div className="justify-end col-6 d-flex">
-                        <div className="nextbtn2text">
-                          <h4 className="mt-2">NEXT: FINALIZE</h4>
-                        </div>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </div>
+
+              <div className="mt-5 mb-5 ms-4 me-4 row">
+                <div className="justify-start col-6 d-flex">
+                  <Link to="/SMMERYfinish2"><div className="backbtn">
+                    <h4 className="mt-2">BACK</h4>
+                  </div></Link>
+                </div>
+                <div className="justify-end col-6 d-flex">
+                  <div className="nextbtn2text" onClick={next_Finsh}>
+                    <h4 className="mt-2">NEXT: FINALIZE</h4>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>

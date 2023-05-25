@@ -6,6 +6,7 @@ import Heder_nav4 from "../components/Heder_nav4";
 import "./SMMERY01.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { Link } from "react-router-dom";
 
 export default function SMMERY01() {
   return (
@@ -33,7 +34,7 @@ export default function SMMERY01() {
                         className="bg_input_list_mini"
                         id="basic-addon2"
                       >
-                        {/* <img src="./images/hari.png" alt="" /> */}
+                        {/* <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" /> */}
                       </InputGroup.Text>
                     </InputGroup>
                   </div>
@@ -187,21 +188,22 @@ export default function SMMERY01() {
                       }}
                     />
 
-                    <div className="mt-3 mb-5 row">
+
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 mb-5 row">
                       <div className="justify-start col-6 d-flex">
-                        <div className="backbtn">
-                          <h4 className="mt-2">BACK</h4>
+                      <div className="backbtn">
+                      <Link to="/SKIllsSummry"><h4 className="mt-2">BACK</h4></Link>
                         </div>
                       </div>
                       <div className="justify-end col-6 d-flex">
                         <div className="nextbtn2text">
-                          <h4 className="mt-2">NEXT: EXTRA SECTION</h4>
+                        <Link to="/SMMERYfinish"><h4 className="mt-2">NEXT: EXTRA SECTION</h4></Link>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
