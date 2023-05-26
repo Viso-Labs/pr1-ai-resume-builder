@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
@@ -11,11 +11,151 @@ import {Link,useNavigate } from 'react-router-dom';
 export default function WorkHistoy4() {
 
     const navigate = useNavigate();
+
+    const [sclname, setsclname] = useState('')
+    const [scllocation, setscllocation] = useState('');
+    const [dgree, setdgree] = useState('')
+    const [gradestartd, setgradestartd] = useState('');
+    const [gradeendd, setgradeendd] = useState('')
+    const [filedofstudy, setfiledofstudy] = useState('');
+
+    const changesclname = (event) => {
+
+        setsclname(event.target.value);
+        var id = document.getElementById("sclnameid");
+        if (sclname !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changescllocation = (event) => {
+
+        setscllocation(event.target.value);
+        var id = document.getElementById("scllocationid");
+        if (scllocation !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+            id.style.display = "none";
+
+        }
+
+    };
+    const changedgree = (event) => {
+
+        setdgree(event.target.value);
+        var id = document.getElementById("dgreeid");
+
+        if (dgree !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changegradestartd = (event) => {
+
+        setgradestartd(event.target.value);
+        var id = document.getElementById("gradestartdid");
+        if (gradestartd !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+        }
+
+    };
+    const changegradeendd = (event) => {
+
+        setgradeendd (event.target.value);
+        var id = document.getElementById("gradeenddid");
+
+        if (gradeendd  !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+            id.style.display = "none";
+
+        }
+
+    };
+    const changefiledofstudy = (event) => {
+
+        setfiledofstudy(event.target.value);
+        var id = document.getElementById("filedofstudyid");
+
+        if (filedofstudy !== "") {
+
+            id.style.display = "block";
+        }
+        else {
+
+            id.style.display = "none";
+
+        }
+
+    };
     
     const next_SK = () =>{
 
+        if (sclname === "") {
+            var id = document.getElementById("sclnameid");
+            id.style.display = "none";
+            alert("Fill the sclname!");
+
+        }
+        else if (scllocation=== "") {
+
+            var id = document.getElementById("scllocationid");
+            id.style.display = "none";
+            alert("Fill the scllocation!");
+
+        }
+        else if (dgree === "") {
+
+            var id = document.getElementById("dgreeid");
+            id.style.display = "none";
+            alert("Fill the dgree!");
+
+        }
+        else if (gradestartd === "") {
+
+            var id = document.getElementById("gradestartdid");
+            id.style.display = "none";
+            alert("Fill the gradestartd!");
+
+        }
+        else if (gradeendd === "") {
+
+            var id = document.getElementById("gradeenddid");
+            id.style.display = "none";
+            alert("Fill the gradeendd!");
+
+        }
+        else if (filedofstudy === "") {
+
+            var id = document.getElementById("filedofstudyid");
+            id.style.display = "none";
+            alert("Fill the filedofstudy!");
+
+        }
+        else{
+
         sessionStorage.setItem("head4", true);
         navigate("/EducationPreveiw");
+        }
         
     }
 
@@ -48,9 +188,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type="name"
+                                                    onChange={changesclname}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="sclnameid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -64,9 +206,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type="name"
+                                                    onChange={changescllocation}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="scllocationid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -82,9 +226,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type="name"
+                                                    onChange={changedgree}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="dgreeid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -98,9 +244,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type="date"
+                                                    onChange={changegradestartd}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="gradestartdid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -116,9 +264,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    onChange={changefiledofstudy}
+                                                    
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="filedofstudyid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -132,9 +282,11 @@ export default function WorkHistoy4() {
                                                     placeholder=""
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
+                                                    type="date"
+                                                    onChange={changegradeendd}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="newid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id ="gradeenddid" style={{display:"none"}} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>

@@ -1,6 +1,7 @@
 import "./ChooseTemplate.css";
 import React from "react";
 import Heder_nav6 from "../components/Heder_nav6";
+import { NavLink } from "react-router-dom";
 
 export default function ChooseTemplate() {
   return (
@@ -23,7 +24,7 @@ export default function ChooseTemplate() {
         <span class="v78_248">Template 19</span>
         <span class="v78_249">Template 22</span>
         <span class="v78_250">Template 25</span>
-        <span class="v78_251">Template 2</span>
+        <NavLink to="/Creation"><span class="v78_251">Template 2</span></NavLink>
         <span class="v78_252">Template 5</span>
         <span class="v78_253">Template 8</span>
         <span class="v78_254">Template 11</span>

@@ -1,9 +1,38 @@
 import "./ContactUS.css";
-import React from "react";
+import {React,useState} from "react";
 import Footer3 from "../components/Footer3";
 import Heder_nav5 from "../components/Heder_nav5";
 
 export default function ContactUS() {
+
+  const [status, setStatus] = useState("Submit");
+  const [name,setname]=useState("");
+  const [email,setemail]=useState("");
+  const [message,setmeaasage]=useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    let details = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+
+    let response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Submit");
+    let result = await response.json();
+    alert(result.status);
+  };
+
   return (
     <div className="bodyc">
       <Heder_nav5 />
@@ -141,29 +170,36 @@ export default function ContactUS() {
           Questions? Concerns? We're here tolisten and respond!
         </span>
         <div class="v368_5897">
-          <div class="v368_5854"></div>
-          <span class="v368_5855">E-mail address</span>
+          {/* <div class="v368_5854"></div>
+          <span class="v368_5855">E-mail address</span> */}
+          <input onChange={(e) => setemail(e.target.value)} className="v368_5854 padinginput" type="email" placeholder="E-mail address" />
         </div>
         <div class="v368_5898">
-          <div class="v368_5856"></div>
-          <span class="v368_5857">Your full name</span>
+          {/* <div class="v368_5856"></div>
+          <span class="v368_5857">Your full name</span> */}
+          <input onChange={(e) => setname(e.target.value)} className="v368_5856 padinginput" type="text" placeholder="Your full name" />
         </div>
         <div class="v368_5899">
-          <div class="v368_5859"></div>
+          {/* <div class="v368_5859"></div>
           <span class="v368_5860">
             Let’sus know your need, so we can help you
-          </span>
+          </span> */}
+          <textarea  onChange={(e) => setmeaasage(e.target.value)} className="v368_5859 padinginput" name="" id="" cols="30" rows="10"  placeholder=" Let’sus know your need, so we can help you"></textarea>
         </div>
         <span class="v368_5861">
           We will process your data in accordance with our <span className="colTxble">Privacy Policy.</span>
         </span>
-        <div className="btnsendby">
+        <div className="btnsendby" onClick={handleSubmit}>
           <h3>SEND MESSAGE</h3>
         </div>
         <div class="v368_5896">
-          <div class="v368_5852"></div>
-          <span class="v368_5858">Enter subject/topic here</span>
+          {/* <div class="v368_5852"></div> */}
+          {/* <span class="v368_5858">Enter subject/topic here</span> */}
+
+          <input className="v368_5852 padinginput" type="text" placeholder="Enter subject/topic here" />
         </div>
+
+        <h1>{status}</h1>
 
         <div class="name"></div>
         <div class="v368_5867"></div>

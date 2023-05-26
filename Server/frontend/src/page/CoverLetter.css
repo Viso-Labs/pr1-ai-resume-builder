@@ -16,6 +16,9 @@
     left: 0px;
     overflow: hidden;
 }
+.padinginput{
+    padding: 10px !important;
+}
 
 .v239_404 {
     width: 100%;

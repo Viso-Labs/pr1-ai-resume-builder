@@ -5,11 +5,13 @@ import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./Creation.css";
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 export default function Creation() {
     const navigate = useNavigate();
+    const [pdfDownloadLink, setPdfDownloadLink] = useState(null);
 
 
     const [First_Name, setFirst_Name] = useState('')
@@ -205,6 +207,12 @@ export default function Creation() {
 
         }
         else{
+            // var data={"fristname":First_Name,"surname":Surname,"profession":Profession,
+            //         "district":District,"country":Country,"postalcode":Postal_Code,"phone":Phone,"email":Email}
+            // console.log(data);
+            // axios.post('http://localhost:3000/generate-pdf',data)
+            // .then(response => setPdfDownloadLink(response.data.downloadLink))
+            // .catch(error => console.error(error));
             sessionStorage.setItem("head2", true);
             navigate("/WorkHistoy");
         }

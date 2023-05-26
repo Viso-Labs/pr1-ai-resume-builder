@@ -167,6 +167,11 @@ export default function WorkHistoy3() {
         
     }
 
+    const next_education2 = () =>{
+        sessionStorage.setItem("head3", true);
+        navigate("/Noexperience");
+    }
+
     return (
         <div>
             <div>
@@ -347,7 +352,7 @@ export default function WorkHistoy3() {
                                             <div className='mt-5 col-12'>
                                                 <div className='row ms-5 me-5'>
                                                     <div className='col-8'>
-                                                        <div onClick={next_education} className='row btn_dont'>
+                                                        <div onClick={next_education2} className='row btn_dont'>
                                                             <p className='mt-2 ms-5'>I DONT HAVE EXPERIENCE</p>
                                                         </div>
                                                     </div>
