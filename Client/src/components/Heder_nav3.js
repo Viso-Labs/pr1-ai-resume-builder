@@ -20,7 +20,7 @@ export default function Heder_nav3() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="creatBTN2 me-4">
-                                            <Link to="/SignUp"><h6 className="cteatTx ms-2 me-2">CREATE ACCOUNT</h6></Link>
+                                            <Link to="/SignupAccoyunt"><h6 className="cteatTx ms-2 me-2">CREATE ACCOUNT</h6></Link></Link>
                                         </div>
                                     </div>
                                 </div>

@@ -4,13 +4,14 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy3.css";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate,useLocation} from 'react-router-dom';
 
 
 
 export default function WorkHistoy3() {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     
     const [title, settitle] = useState('')
@@ -19,6 +20,7 @@ export default function WorkHistoy3() {
     const [country, setcountry] = useState('');
     const [startdate, setstartdate] = useState('')
     const [enddate, setenddate] = useState('');
+    const [status, setStatus] = useState("Submit");
 
     const changetitle = (event) => {
 
@@ -115,7 +117,9 @@ export default function WorkHistoy3() {
         popbox[0].style.visibility = "hidden";
       };
 
-      const next_education = () =>{
+      const next_education = async (e) => {
+
+        e.preventDefault();
 
         if (title === "") {
             var id = document.getElementById("titleid");
@@ -159,8 +163,38 @@ export default function WorkHistoy3() {
 
         }
         else{
+            
+            location.state.data.job_title=title;
+            location.state.data.employee=employee;
+            location.state.data.city=city;
+            location.state.data.country=country;
+            location.state.data.startdate=startdate;
+            location.state.data.enddate=enddate;
+            var data = location.state.data;
+            console.log(data);
+
+            let response = await fetch("http://localhost:3000/generate-pdf", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(data),
+            });
+            setStatus("Submit");
+            let result = await response.json();
+            
+
+            sessionStorage.setItem("head2", true);
+            sessionStorage.setItem("pdflink", result.downloadLink);
             sessionStorage.setItem("head3", true);
-            navigate("/Noexperience");
+            navigate("/Noexperience", {
+                state: {
+                  data
+                }
+              });
+
+            // console.log(location.state.data);
+            
         }
 
 

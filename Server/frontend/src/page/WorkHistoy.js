@@ -1,16 +1,17 @@
-import {React,useState} from 'react'
+import { React, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy.css";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 
 
 export default function WorkHistoy() {
-    const [seletct,setselect]= useState();
+    const [seletct, setselect] = useState();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const SELECT01 = () => {
         const pBox = document.getElementsByClassName("borderselect2");
@@ -18,7 +19,7 @@ export default function WorkHistoy() {
         const pBox2 = document.getElementsByClassName("borderselect1");
         pBox2[0].style.border = "5px solid white";
         setselect("A STUDENT OF MY IT UNIVERSITY");
-        
+
     };
     const SELECT02 = () => {
         const pBox = document.getElementsByClassName("borderselect1");
@@ -27,20 +28,37 @@ export default function WorkHistoy() {
         pBox2[0].style.border = "5px solid white";
         setselect("A DIFFERENT PERSON");
     };
-  
-    const chosseone = () =>{
-      if(seletct=="A STUDENT OF MY IT UNIVERSITY"){
-        sessionStorage.setItem("usertype", seletct);
-        navigate("/WorkHistoy2");
-      }
-      else if(seletct=="A DIFFERENT PERSON"){
-        sessionStorage.setItem("usertype", seletct);
-        navigate("/WorkHistoy2");
-  
-      }
-      else{
-        alert("Please Choice your type")
-      }
+
+    const chosseone = () => {
+
+        var data = location.state.data;
+
+        if (seletct == "A STUDENT OF MY IT UNIVERSITY") {
+            sessionStorage.setItem("usertype", seletct);
+            location.state.data.type = seletct;
+            navigate("/WorkHistoy2", {
+                state: {
+                    data
+                }
+            });
+
+        }
+        else if (seletct == "A DIFFERENT PERSON") {
+            sessionStorage.setItem("usertype", seletct);
+            location.state.data.type = seletct;
+            
+            navigate("/WorkHistoy2", {
+                state: {
+                    data
+                }
+            });
+
+        }
+        else {
+
+            alert("Please Choice your type");
+
+        }
     }
 
     return (
@@ -66,14 +84,14 @@ export default function WorkHistoy() {
                                     <div className='col-6'>
                                         <div className='row ms-4 me-4' onClick={SELECT01}>
                                             <div className='mt-4 mb-4 borderselect1'>
-                                            A STUDENT OF MY IT UNIVERSITY
+                                                A STUDENT OF MY IT UNIVERSITY
                                             </div>
                                         </div>
                                     </div>
                                     <div className='col-6'>
                                         <div className='row ms-4 me-4' onClick={SELECT02}>
                                             <div className='mt-4 mb-4 borderselect2'>
-                                            A DIFFERENT PERSON
+                                                A DIFFERENT PERSON
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +105,7 @@ export default function WorkHistoy() {
                                         </div>
                                     </div>
                                     <div className='justify-end col-6 d-flex'>
-                                    <Link to="/WorkHistoy2"><div className='align-middle d-flex wi'>
+                                        <Link to="/WorkHistoy2"><div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'>SKIP FOR NOW</h6>
                                         </div></Link>
                                         <div className='nextbtn2' onClick={chosseone}>

@@ -31,13 +31,13 @@ const contactEmail = nodemailer.createTransport({
     },
 });
 
-contactEmail.verify((error) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("Ready to Send");
-    }
-});
+// contactEmail.verify((error) => {
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log("Ready to Send");
+//     }
+// });
 
 router.post("/contact", (req, res) => {
     const name = req.body.name;
@@ -105,26 +105,90 @@ app.post('/generate-resume', async (req, res) => {
 app.post('/generate-pdf', async (req, res) => {
     try {
         // Extract the necessary data from the request body
-        const { fristname, surname, profession, district, country, postalcode, phone, email } = req.body;
+        const { fristname, surname, profession, district, biocountry, postalcode, phone, email,
+         job_title,employer,city,country,start,end,sclname,scllocation,degree,gradestartdate
+        ,filedofstudy,graductionendday,skill,summeary,type} = req.body;
         // Create a new PDF document
         console.log(req.body);
         const pdfDoc = await PDFDocument.create();
         // Add a new page to the document
         const page = pdfDoc.addPage();
         // Set up the content and formatting of the page
-        page.drawText(`First Name: ${fristname}`, { x: 50, y: 700 });
-        page.drawText(`Surname: ${surname}`, { x: 50, y: 650 });
-        page.drawText(`Profession: ${profession}`, { x: 50, y: 600 });
-        page.drawText(`District: ${district}`, { x: 50, y: 550 });
-        page.drawText(`Country: ${country}`, { x: 50, y: 500 });
-        page.drawText(`Postal Code: ${postalcode}`, { x: 50, y: 450 });
-        page.drawText(`Phone: ${phone}`, { x: 50, y: 400 });
-        page.drawText(`Email: ${email}`, { x: 50, y: 350 });
+        if(fristname !== ""){
+            page.drawText(`First Name: ${fristname}`, { x: 50, y: 700 });
+        }
+        if(surname !== ""){
+            page.drawText(`Surname: ${surname}`, { x: 50, y: 680 });
+        }
+        if(profession !== ""){
+            page.drawText(`Profession: ${profession}`, { x: 50, y: 650 });
+        }
+        if(district !== ""){
+            page.drawText(`District: ${district}`, { x: 50, y: 630 });
+        }
+        if(biocountry !== ""){
+            page.drawText(`Country: ${biocountry}`, { x: 50, y: 610 });
+        }
+        if(postalcode !== ""){
+            page.drawText(`Postal Code: ${postalcode}`, { x: 50, y: 600 });
+        }
+        if(type !== ""){
+            page.drawText(`User Type: ${type}`, { x: 50, y: 580 });
+        }
+        if(phone !== ""){
+            page.drawText(`Phone: ${phone}`, { x: 50, y: 550 });
+        }
+        if(email !== ""){
+            page.drawText(`Email: ${email}`, { x: 50, y: 540 });
+        }
+        if(job_title !== ""){
+            page.drawText(`Job Title: ${job_title}`, { x: 50, y: 520 });
+        }
+        if(employer !== ""){
+            page.drawText(`Employer: ${employer}`, { x: 50, y: 500 });
+        }
+        if(city !== ""){
+            page.drawText(`City: ${city}`, { x: 50, y: 480 });
+        }
+
+        if(country !== ""){
+            page.drawText(`Country: ${country}`, { x: 50, y: 450 });
+        }
+        if(start !== ""){
+            page.drawText(`Start Date: ${star}`, { x: 50, y: 400 });
+        }
+        if(end !== ""){
+            page.drawText(`End Date: ${end}`, { x: 50, y: 380 });
+        }
+        if(sclname !== ""){
+            page.drawText(`School Name: ${sclname}`, { x: 50, y: 350 });
+        }
+        if(scllocation !== ""){
+            page.drawText(`School Location: ${scllocation}`, { x: 320, y: 330 });
+        }
+        if(degree !== ""){
+            page.drawText(`Degree: ${degree}`, { x: 50, y: 300 });
+        }
+        if(gradestartdate!== ""){
+            page.drawText(`Graduation Start Date: ${gradestartdate}`, { x: 50, y: 280 });
+        }
+        if(graductionendday !== ""){
+            page.drawText(`Graduation End Date: ${graductionendday}`, { x: 50, y: 260 });
+        }
+        if(filedofstudy !== ""){
+            page.drawText(`Field of Study: ${filedofstudy}`, { x: 50, y: 240 });
+        }
+        if(skill !== ""){
+            page.drawText(`Skill: ${skill}`, { x: 50, y: 220 });
+        }
+        if(summeary !== ""){
+            page.drawText(`Summery: ${summeary}`, { x: 50, y: 200 });
+        }
         // Save the PDF to a file
         const pdfBytes = await pdfDoc.save();
         fs.writeFileSync('generated.pdf', pdfBytes);
         // Return the path or download URL of the generated PDF to the frontend
-        res.json({ downloadLink: 'http://localhost:3000/generated.pdf' });
+        res.json({ downloadLink: 'http://localhost:3001/generated.pdf' });
     } catch (error) {
         console.error('Error generating PDF:', error);
         res.status(500).json({ error: 'Failed to generate PDF' });

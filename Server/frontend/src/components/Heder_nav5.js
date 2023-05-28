@@ -495,7 +495,7 @@ export default function Heder_nav5() {
                   </li>
                   <li class="nav-item dropdown me-2">
                     <a class="ms-2" href="#">
-                    <Link to="/SignUp"><img src="./images/sout.png" alt="" /></Link>
+                    <Link to="/SignupAccoyunt"><img src="./images/sout.png" alt="" /></Link>
                     </a>
                   </li>
                   

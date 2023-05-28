@@ -12,6 +12,7 @@ import axios from 'axios';
 export default function Creation() {
     const navigate = useNavigate();
     const [pdfDownloadLink, setPdfDownloadLink] = useState(null);
+    const [status, setStatus] = useState("Submit");
 
 
     const [First_Name, setFirst_Name] = useState('')
@@ -22,6 +23,12 @@ export default function Creation() {
     const [Postal_Code, setPostal_Code] = useState('');
     const [Phone, setPhone] = useState('')
     const [Email, setEmail] = useState('');
+
+    var data = {
+        fristname:"", surname:"", profession:"", district:"", biocountry:"", postalcode:"", phone:"", email:"",
+        job_title:"", employer:"", city:"", country:"", start:"", end:"", sclname:"", scllocation:"", degree:"", 
+        gradestartdate:"", filedofstudy:"", graductionendday:"", skill:"", summeary:"",type:""
+    }
 
     const changefristname = (event) => {
 
@@ -151,15 +158,15 @@ export default function Creation() {
 
     };
 
-    const next_WH = () => {
-
+    const next_WH = async (e) => {
+        e.preventDefault();
         if (First_Name === "") {
             var id = document.getElementById("fristnamehari");
             id.style.display = "none";
             alert("Fill the Frist name!");
 
         }
-        else if (Surname=== "") {
+        else if (Surname === "") {
 
             var id = document.getElementById("Surnamehari");
             id.style.display = "none";
@@ -206,15 +213,35 @@ export default function Creation() {
             alert("Fill the Email!");
 
         }
-        else{
-            // var data={"fristname":First_Name,"surname":Surname,"profession":Profession,
-            //         "district":District,"country":Country,"postalcode":Postal_Code,"phone":Phone,"email":Email}
-            // console.log(data);
-            // axios.post('http://localhost:3000/generate-pdf',data)
-            // .then(response => setPdfDownloadLink(response.data.downloadLink))
-            // .catch(error => console.error(error));
+        else {
+
+            data.fristname= First_Name;
+            data.surname = Surname;
+            data.profession = Profession;
+            data.district = District;
+            data.country = Country;
+            data.postalcode = Postal_Code;
+            data.phone = Phone;
+            data.email = Email;
+
+
+            let response = await fetch("http://localhost:3000/generate-pdf", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(data),
+            });
+            setStatus("Submit");
+            let result = await response.json();
+
             sessionStorage.setItem("head2", true);
-            navigate("/WorkHistoy");
+            sessionStorage.setItem("pdflink", result.downloadLink);
+            navigate("/WorkHistoy", {
+                state: {
+                  data
+                }
+              });
         }
 
 

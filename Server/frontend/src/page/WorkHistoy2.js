@@ -1,15 +1,33 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy2.css";
-import { Link } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import Pdfview from "./Pdfview";
 
 
 
 export default function WorkHistoy2() {
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    
+
+    const displaypdf = () => {
+        alert(sessionStorage.getItem("pdflink"));
+        navigate("/Pdfview");
+    }
+
+    const nexpage = () =>{
+        var data = location.state.data;
+        console.log(data);
+        navigate("/WorkHistoy3", {
+            state: {
+                data
+            }
+        });
+    }
+
     return (
         <div>
             <div>
@@ -19,7 +37,7 @@ export default function WorkHistoy2() {
                     <div className=' col-12'>
                         <div className='row ms-3 me-3'>
                             <div className='mb-5 mb_cla col-12'>
-                                
+
 
                                 <div className='mt-5 row ms-5 me-5'>
                                     <div className='mt-5 col-12 col-md-6'>
@@ -36,7 +54,7 @@ export default function WorkHistoy2() {
                                             <h6 className='tx_white'>• relevant coursework and academic achievements</h6>
                                         </div>
                                     </div>
-                                    <div className='justify-end align-bottom col-12 col-md-6 d-flex'>
+                                    <div onClick={displaypdf} className='justify-end align-bottom col-12 col-md-6 d-flex'>
                                         <img src="./images/sample.png" alt="" />
                                         <img className='perevev' src="./images/preview.png" alt="" />
                                     </div>
@@ -45,17 +63,17 @@ export default function WorkHistoy2() {
 
                                 <div className='mt-5 mb-5 row ms-5 me-5'>
                                     <div className='justify-start col-6 d-flex'>
-                                    <Link to="/WorkHistoy"><div className='backbtn'>
-                                        <h4 className='mt-2'>BACK</h4>
-                                    </div></Link>
+                                        <Link to="/WorkHistoy"><div className='backbtn'>
+                                            <h4 className='mt-2'>BACK</h4>
+                                        </div></Link>
                                     </div>
                                     <div className='justify-end col-6 d-flex'>
                                         <Link to="/WorkHistoy3"><div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'>SKIP FOR NOW</h6>
                                         </div></Link>
-                                        <Link to="/WorkHistoy3"><div className='nextbtn2'>
-                                           <h4 className='mt-2'>Next</h4>
-                                        </div></Link>
+                                        <div className='nextbtn2' onClick={nexpage}>
+                                            <h4 className='mt-2'>Next</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -72,10 +90,8 @@ export default function WorkHistoy2() {
                                                 <img className='mt-3 cut me-3' src="./images/cut.png" alt="" />
                                             </div>
                                         </div>
-                                        <div className='row'>
-                                            <div className='justify-center col-12 d-flex'>
-                                                <img className='mt-5 mb-5' src="./images/peview.png" alt="" />
-                                            </div>
+                                         <div onClick={displaypdf} className='row'>
+
                                         </div>
                                     </div>
                                 </div>

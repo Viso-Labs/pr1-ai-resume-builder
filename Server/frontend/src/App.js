@@ -46,9 +46,12 @@ import SMMERY01 from "./page/SMMERY01";
 import SMMERYfinish from "./page/SMMERYfinish";
 import SMMERYfinish2 from "./page/SMMERYfinish2";
 import SMMERYfinish3 from "./page/SMMERYfinish3";
+import Pdfview from './page/Pdfview';
+import SignupAccoyunt from './page/SignupAccoyunt';
 
 function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -95,7 +98,9 @@ function App() {
         <Route path="/ResumBuilder" element={<ResumBuilder />} />
         <Route path="/ResumTemp" element={<ResumTemp />} />
         <Route path="/ResumExample" element={<ResumExample/>} />
-        <Route path="/ResumExample2 " element={<ResumExample2/>} />       
+        <Route path="/ResumExample2" element={<ResumExample2/>} /> 
+        <Route path="/Pdfview" element={<Pdfview/>} /> 
+        <Route path="/SignupAccoyunt" element={<SignupAccoyunt/>} />      
       </Routes>
     </BrowserRouter>
 

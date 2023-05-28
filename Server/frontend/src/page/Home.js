@@ -2,6 +2,7 @@ import "./Home.css";
 import React from "react";
 import Footer4 from "../components/Footer4";
 import Heder_nav5 from "../components/Heder_nav5";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
             <div class="v10_62v"></div>
             <div class="v10_64"></div>
             <div class="btn_ckeck">
-              <h4>CHECK OUT OUR RESUME BUILDER</h4>
+              <Link to='/SignUp'><h4>CHECK OUT OUR RESUME BUILDER</h4></Link>
             </div>
           </div>
           <span class="v10_123">
