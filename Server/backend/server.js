@@ -114,75 +114,90 @@ app.post('/generate-pdf', async (req, res) => {
         // Add a new page to the document
         const page = pdfDoc.addPage();
         // Set up the content and formatting of the page
+        page.drawText(`Profile Information`, { x: 150, y: 800 });
+
         if(fristname !== ""){
-            page.drawText(`First Name: ${fristname}`, { x: 50, y: 700 });
+            page.drawText(`First Name:${fristname}`, { x: 50, y: 750 });
         }
         if(surname !== ""){
-            page.drawText(`Surname: ${surname}`, { x: 50, y: 680 });
+            page.drawText(`Surname: ${surname}`, { x: 300, y: 750 });
         }
         if(profession !== ""){
-            page.drawText(`Profession: ${profession}`, { x: 50, y: 650 });
+            page.drawText(`Profession: ${profession}`, { x: 50, y: 700 });
         }
         if(district !== ""){
-            page.drawText(`District: ${district}`, { x: 50, y: 630 });
+            page.drawText(`District: ${district}`, { x: 300, y: 700 });
         }
         if(biocountry !== ""){
-            page.drawText(`Country: ${biocountry}`, { x: 50, y: 610 });
+            page.drawText(`Country: ${biocountry}`, { x: 50, y: 650 });
         }
         if(postalcode !== ""){
-            page.drawText(`Postal Code: ${postalcode}`, { x: 50, y: 600 });
+            page.drawText(`Postal Code: ${postalcode}`, { x: 300, y: 650 });
         }
-        if(type !== ""){
-            page.drawText(`User Type: ${type}`, { x: 50, y: 580 });
-        }
+        // if(type !== ""){
+        //     page.drawText(`User Type: ${type}`, { x: 150, y: 550 });
+        // }
+
         if(phone !== ""){
-            page.drawText(`Phone: ${phone}`, { x: 50, y: 550 });
+            page.drawText(`Phone: ${phone}`, { x: 50, y: 600 });
         }
         if(email !== ""){
-            page.drawText(`Email: ${email}`, { x: 50, y: 540 });
+            page.drawText(`Email: ${email}`, { x: 300, y: 600 });
         }
+
+        
+
         if(job_title !== ""){
-            page.drawText(`Job Title: ${job_title}`, { x: 50, y: 520 });
+            page.drawText(`WORK HISTORY Information`, { x: 150, y: 550 });
+            page.drawText(`Job Title: ${job_title}`, { x: 50, y: 500 });
         }
         if(employer !== ""){
-            page.drawText(`Employer: ${employer}`, { x: 50, y: 500 });
+            page.drawText(`Employer: ${employer}`, { x: 300, y: 500 });
         }
         if(city !== ""){
-            page.drawText(`City: ${city}`, { x: 50, y: 480 });
+            page.drawText(`City: ${city}`, { x: 50, y: 450 });
         }
 
         if(country !== ""){
-            page.drawText(`Country: ${country}`, { x: 50, y: 450 });
+            page.drawText(`Country: ${country}`, { x: 300, y: 450 });
         }
         if(start !== ""){
-            page.drawText(`Start Date: ${star}`, { x: 50, y: 400 });
+            page.drawText(`Start Date: ${start}`, { x: 50, y: 400 });
         }
         if(end !== ""){
-            page.drawText(`End Date: ${end}`, { x: 50, y: 380 });
+            page.drawText(`End Date: ${end}`, { x: 300, y: 400 });
         }
+
+        
+
         if(sclname !== ""){
-            page.drawText(`School Name: ${sclname}`, { x: 50, y: 350 });
+            page.drawText(`EDUCATION Information`, { x: 150, y: 350 });
+            page.drawText(`School Name: ${sclname}`, { x: 50, y: 300 });
         }
         if(scllocation !== ""){
-            page.drawText(`School Location: ${scllocation}`, { x: 320, y: 330 });
+            page.drawText(`School Location: ${scllocation}`, { x: 300, y: 300 });
         }
         if(degree !== ""){
-            page.drawText(`Degree: ${degree}`, { x: 50, y: 300 });
+            page.drawText(`Degree: ${degree}`, { x: 50, y: 250 });
         }
         if(gradestartdate!== ""){
-            page.drawText(`Graduation Start Date: ${gradestartdate}`, { x: 50, y: 280 });
+            page.drawText(`Start Date: ${gradestartdate}`, { x: 300, y: 250 });
         }
         if(graductionendday !== ""){
-            page.drawText(`Graduation End Date: ${graductionendday}`, { x: 50, y: 260 });
+            page.drawText(`End Date: ${graductionendday}`, { x: 50, y: 200 });
         }
         if(filedofstudy !== ""){
-            page.drawText(`Field of Study: ${filedofstudy}`, { x: 50, y: 240 });
+            page.drawText(`Field of Study: ${filedofstudy}`, { x: 300, y: 200 });
         }
+
+
         if(skill !== ""){
-            page.drawText(`Skill: ${skill}`, { x: 50, y: 220 });
+            page.drawText(`Your Skills`, { x: 150, y: 150 });
+            page.drawText(`Skill: ${skill}`, { x: 50, y: 100 });
         }
         if(summeary !== ""){
-            page.drawText(`Summery: ${summeary}`, { x: 50, y: 200 });
+            page.drawText(`Your Summery`, { x: 150, y: 80 });
+            page.drawText(`Summery: ${summeary}`, { x: 50, y: 50 });
         }
         // Save the PDF to a file
         const pdfBytes = await pdfDoc.save();

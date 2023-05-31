@@ -4,11 +4,26 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./Noexperience.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 
 
 export default function Noexperience() {
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
+    const nextpage = () =>{
+        var data = location.state.data;
+        console.log(data);
+        navigate("/WorkHistoy4", {
+            state: {
+                data
+            }
+        });
+    }
+
     return (
         <div>
             <div>
@@ -52,9 +67,9 @@ export default function Noexperience() {
                                         <div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'></h6>
                                         </div>
-                                        <Link to="/WorkHistoy4"><div className='nextbtn2'>
+                                    <div className='nextbtn2' onClick={nextpage}>
                                       <h4 className='mt-2'>Next</h4>
-                                        </div></Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

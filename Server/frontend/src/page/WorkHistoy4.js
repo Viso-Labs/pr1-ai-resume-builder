@@ -1,16 +1,17 @@
-import {React,useState} from 'react'
+import { React, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./WorkHistoy4.css";
-import {Link,useNavigate } from 'react-router-dom';
+import {Link, useNavigate,useLocation} from 'react-router-dom';
 
 
 
 export default function WorkHistoy4() {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [sclname, setsclname] = useState('')
     const [scllocation, setscllocation] = useState('');
@@ -78,10 +79,10 @@ export default function WorkHistoy4() {
     };
     const changegradeendd = (event) => {
 
-        setgradeendd (event.target.value);
+        setgradeendd(event.target.value);
         var id = document.getElementById("gradeenddid");
 
-        if (gradeendd  !== "") {
+        if (gradeendd !== "") {
 
             id.style.display = "block";
         }
@@ -107,8 +108,8 @@ export default function WorkHistoy4() {
         }
 
     };
-    
-    const next_SK = () =>{
+
+    const next_SK = async (e) => {
 
         if (sclname === "") {
             var id = document.getElementById("sclnameid");
@@ -116,7 +117,7 @@ export default function WorkHistoy4() {
             alert("Fill the sclname!");
 
         }
-        else if (scllocation=== "") {
+        else if (scllocation === "") {
 
             var id = document.getElementById("scllocationid");
             id.style.display = "none";
@@ -151,12 +152,33 @@ export default function WorkHistoy4() {
             alert("Fill the filedofstudy!");
 
         }
-        else{
+        else {
 
-        sessionStorage.setItem("head4", true);
-        navigate("/EducationPreveiw");
+            location.state.data.sclname = sclname;
+            location.state.data.scllocation = scllocation;
+            location.state.data.degree = dgree;
+            location.state.data.gradestartdate = gradestartd;
+            location.state.data.graductionendday = gradeendd;
+            location.state.data.filedofstudy = filedofstudy;
+            var data = location.state.data;
+            console.log(data);
+
+            let response = await fetch("http://localhost:3000/generate-pdf", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(data),
+            });
+            let result = await response.json();
+            sessionStorage.setItem("pdflink", result.downloadLink);
+
+            sessionStorage.setItem("head4", true);
+            navigate("/EducationPreveiw");
+
+            
         }
-        
+
     }
 
     return (
@@ -192,7 +214,7 @@ export default function WorkHistoy4() {
                                                     onChange={changesclname}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="sclnameid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="sclnameid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -210,7 +232,7 @@ export default function WorkHistoy4() {
                                                     onChange={changescllocation}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="scllocationid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="scllocationid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -230,7 +252,7 @@ export default function WorkHistoy4() {
                                                     onChange={changedgree}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="dgreeid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="dgreeid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -248,7 +270,7 @@ export default function WorkHistoy4() {
                                                     onChange={changegradestartd}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="gradestartdid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="gradestartdid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -265,10 +287,10 @@ export default function WorkHistoy4() {
                                                     aria-label="Recipient's username"
                                                     aria-describedby="basic-addon2"
                                                     onChange={changefiledofstudy}
-                                                    
+
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="filedofstudyid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="filedofstudyid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>
@@ -286,7 +308,7 @@ export default function WorkHistoy4() {
                                                     onChange={changegradeendd}
                                                 />
                                                 <InputGroup.Text className='bg_input_list_mini' id="basic-addon2">
-                                                    <img id ="gradeenddid" style={{display:"none"}} src="./images/hari.png" alt="" />
+                                                    <img id="gradeenddid" style={{ display: "none" }} src="./images/hari.png" alt="" />
                                                 </InputGroup.Text>
                                             </InputGroup>
                                         </div>

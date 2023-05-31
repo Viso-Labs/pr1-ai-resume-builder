@@ -165,11 +165,11 @@ export default function WorkHistoy3() {
         else{
             
             location.state.data.job_title=title;
-            location.state.data.employee=employee;
+            location.state.data.employer=employee;
             location.state.data.city=city;
             location.state.data.country=country;
-            location.state.data.startdate=startdate;
-            location.state.data.enddate=enddate;
+            location.state.data.start=startdate;
+            location.state.data.end=enddate;
             var data = location.state.data;
             console.log(data);
 
@@ -182,9 +182,6 @@ export default function WorkHistoy3() {
             });
             setStatus("Submit");
             let result = await response.json();
-            
-
-            sessionStorage.setItem("head2", true);
             sessionStorage.setItem("pdflink", result.downloadLink);
             sessionStorage.setItem("head3", true);
             navigate("/Noexperience", {
@@ -202,8 +199,15 @@ export default function WorkHistoy3() {
     }
 
     const next_education2 = () =>{
+        var data = location.state.data;
+
         sessionStorage.setItem("head3", true);
-        navigate("/Noexperience");
+        navigate("/Noexperience", {
+            state: {
+              data
+            }
+          });
+
     }
 
     return (

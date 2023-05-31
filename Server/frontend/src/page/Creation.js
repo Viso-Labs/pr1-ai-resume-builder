@@ -219,7 +219,7 @@ export default function Creation() {
             data.surname = Surname;
             data.profession = Profession;
             data.district = District;
-            data.country = Country;
+            data.biocountry = Country;
             data.postalcode = Postal_Code;
             data.phone = Phone;
             data.email = Email;
