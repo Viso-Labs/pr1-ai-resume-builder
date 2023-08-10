@@ -10,6 +10,7 @@
     "bootstrap": "^5.2.3",
     "draft-js": "^0.11.7",
     "froala-editor": "^4.0.18",
+    "immutable": "^4.3.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",

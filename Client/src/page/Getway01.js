@@ -21,8 +21,8 @@ export default function Getway01() {
               </div>
             </div>
             <div className='justify-center col-12 d-flex'>
-          <div className='justify-center row d-flex'>
-              <img className='paypal_img' src="./images/paypal.png" alt="" />
+              <div className='justify-center row d-flex'>
+                <img className='paypal_img' src="./images/paypal.png" alt="" />
               </div>
             </div>
             <div className='justify-center col-12 d-flex'>
@@ -41,7 +41,7 @@ export default function Getway01() {
 
             <div className='justify-center col-12 d-flex'>
               <div className='justify-center row d-flex'>
-              <img className='paypal_img' src="./images/script.png" alt="" />
+                <img className='paypal_img' src="./images/script.png" alt="" />
               </div>
             </div>
 
@@ -56,14 +56,14 @@ export default function Getway01() {
             <div className='justify-center mt-5 mb-5 col-12 d-flex'>
               <div className='justify-center row d-flex'>
                 <div className='col-3'>
-                <img className='lock_png' src="./images/lock.png" alt="" />
+                  <img className='lock_png' src="./images/lock.png" alt="" />
                 </div>
                 <div className='col-9'>
-                <h6 className='color_white'>SECURE_CHECKOUT</h6>
+                  <h6 className='color_white'>SECURE_CHECKOUT</h6>
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

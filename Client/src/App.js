@@ -44,15 +44,16 @@ import SMMERY01 from "./page/SMMERY01";
 import SMMERYfinish from "./page/SMMERYfinish";
 import SMMERYfinish2 from "./page/SMMERYfinish2";
 import SMMERYfinish3 from "./page/SMMERYfinish3";
+import GeneratePdf from './page/GeneratePdf';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/Finnishsec3" element={<Finnishsec3 />} />
-        <Route path="/Finnishsec4" element={<Finnishsec4  />} />
-        <Route path="/Finishted" element={<Finishted/>} />
+        <Route path="/Finnishsec4" element={<Finnishsec4 />} />
+        <Route path="/Finishted" element={<Finishted />} />
         <Route path="/SMMERY01" element={<SMMERY01 />} />
         <Route path="/SMMERYfinish" element={<SMMERYfinish />} />
         <Route path="/SMMERYfinish2" element={<SMMERYfinish2 />} />
@@ -87,11 +88,12 @@ function App() {
         <Route path="/Noexperience" element={<Noexperience />} />
         <Route path="/EducationPreveiw" element={<EducationPreveiw />} />
         <Route path="/SKIllsSummry" element={<SKIllsSummry />} />
-        <Route path="/SKIllPic" element={<SKIllPic/>} />
+        <Route path="/SKIllPic" element={<SKIllPic />} />
         <Route path="/ResumBuilder" element={<ResumBuilder />} />
         <Route path="/ResumTemp" element={<ResumTemp />} />
-        <Route path="/ResumExample" element={<ResumExample/>} />
-        <Route path="/ResumExample2 " element={<ResumExample2/>} />       
+        <Route path="/ResumExample" element={<ResumExample />} />
+        <Route path="/ResumExample2 " element={<ResumExample2 />} />
+        <Route path="/generatePdf" element={<GeneratePdf />} />
       </Routes>
     </BrowserRouter>
 
