@@ -48,11 +48,24 @@ import SMMERYfinish2 from "./page/SMMERYfinish2";
 import SMMERYfinish3 from "./page/SMMERYfinish3";
 import Pdfview from './page/Pdfview';
 import SignupAccoyunt from './page/SignupAccoyunt';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    
+    <div className="App">
     <BrowserRouter>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/Finnishsec" element={<Finnishsec/>} />
@@ -103,7 +116,7 @@ function App() {
         <Route path="/SignupAccoyunt" element={<SignupAccoyunt/>} />      
       </Routes>
     </BrowserRouter>
-
+    </div>
   );
 }
 
