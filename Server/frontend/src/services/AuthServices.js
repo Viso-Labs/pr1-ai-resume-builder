@@ -49,9 +49,6 @@ const logout = async () => {
     const response = await axios.post("/api/logout", data);
     if(response.status === 200 || response.status === 202){
       Token.removeAccessToken();
-      console.log('removing token...')
-      const token = Token.getAccessToken();
-      console.log('token: ',token)
       window.location.href = '/'
       return response.data;
     }

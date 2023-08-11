@@ -5,7 +5,6 @@ import Token from "./token/Token";
 const getBulletPoints = async (data) => {
     const token = Token.getAccessToken();
     const user = Token.getAuth(token);
-    console.log('user: ',user)
 
     if(user.role === "PREMIUM_USER"){
       try {

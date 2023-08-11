@@ -16,7 +16,7 @@ axiosInstance.interceptors.response.use((response) => {
         ToasterMessage.ErrorMessage({
             custom_message: "Your session has expired. Please login again."
         })
-        // window.location.href = '/'
+        window.location.href = '/'
     }
     return Promise.reject(error);
 });
