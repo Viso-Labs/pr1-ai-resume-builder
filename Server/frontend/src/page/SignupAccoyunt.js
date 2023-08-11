@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword} from 'firebase/auth';
 import { auth, firestoredb } from '../firebase';
 import { collection, addDoc } from "firebase/firestore";
-
+import AuthServices from "../services/AuthServices";
 
 
 export default function SignupAccoyunt() {
@@ -16,10 +16,25 @@ export default function SignupAccoyunt() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-  
+
     const onSubmit = async (e) => {
-      e.preventDefault();
+        try {
+            const isSignUp = await AuthServices.signUp({fullName:name, email:email, password:password});
+            if (isSignUp) {
+                // await onSubmitFirebase(e);
+                if(email==="admin2@gmail.com" && password==="admin123"){
+                    navigate("/Admin");
+                  }
+                  else{
+                    navigate("/LogIn");
+                  }
+            }
+          } catch (error) {
+          }
+    }
   
+    const onSubmitFirebase = async (e) => {
+      e.preventDefault();
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
@@ -33,7 +48,6 @@ export default function SignupAccoyunt() {
           else{
             navigate("/DashBoard01");
           }
-          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -44,22 +58,15 @@ export default function SignupAccoyunt() {
     }
   
     const addusers = async (e) => {
-  
       try {
-  
         const docRef = await addDoc(collection(firestoredb, "users"), {
-  
           email: email,
           password: password,
           name:name,
-  
-  
         });
         console.log("Document written with ID: ", docRef.id);
         alert("User adding succesfully: ", docRef.id);
-  
       } catch (e) {
-  
         console.error("Error adding document: ", e);
         alert("User adding document: ", e)
       }
@@ -127,6 +134,7 @@ export default function SignupAccoyunt() {
                                             </div>
                                         </InputGroup.Text>
                                         <Form.Control
+                                            type="password"
                                             className='bg_input2'
                                             aria-label="Large"
                                             aria-describedby="inputGroup-sizing-sm"
@@ -135,11 +143,19 @@ export default function SignupAccoyunt() {
                                     </InputGroup>
                                 </div>
                             </div>
-                            <div onClick={onSubmit} className='justify-center mt-5 col-12 d-flex'>
+
+                            {/* <div onClick={onSubmit} className='justify-center mt-5 col-12 d-flex'>
                                 <div className='signinbtn'>
                              <h3>SIGN UP</h3>
                                 </div>
-                            </div>
+                            </div> */}
+
+                            <button onClick={onSubmit} className='justify-center mt-5 col-12 d-flex'>
+                                <div className='signinbtn'>
+                             <h3>SIGN UP</h3>
+                                </div>
+                            </button>
+
                             <div className='justify-center mt-3 mb-3 col-12 d-flex'>
                                 <h3 className=''>OR sign up with</h3>
                             </div>
