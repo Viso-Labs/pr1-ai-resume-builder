@@ -1,13 +1,30 @@
-import React from 'react'
+import {React,useState }from "react";
 import "./Getway05.css";
 import Footer from "../components/Footer";
 import Heder_nav2 from "../components/Heder_nav2";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import config from "../env.json";
 
 export default function Getway05() {
+  const navigate = useNavigate();
+  const [packageDetails, setPackageDetails] = useState({packageName:config.PACKAGE_1_NAME, packageValue:config.PACKAGE_1_PRICE})
+  const [isChecked1, setIsChecked1] = useState(true);
+  const [isChecked2, setIsChecked2] = useState(false);
+
+  const handleCheckboxChange = (checkboxNumber) => {
+    if (checkboxNumber === 1) {
+      setPackageDetails({packageName:config.PACKAGE_1_NAME, packageValue:config.PACKAGE_1_PRICE})
+      setIsChecked1(true);
+      setIsChecked2(false);
+    } else if (checkboxNumber === 2) {
+      setPackageDetails({packageName:config.PACKAGE_2_NAME, packageValue:config.PACKAGE_2_PRICE})
+      setIsChecked1(false);
+      setIsChecked2(true);
+    }
+  };
+
   return (
     <div>
 
@@ -28,11 +45,13 @@ export default function Getway05() {
                 <div className='col-12'>
                   <div className='mt-4 row'>
                     <div className='justify-center col-3 d-flex'>
-                      <Form.Check
-                        className='with_set'
-                        type="checkbox"
-                        id={`default-checkbox`}
-                      />
+                    <Form.Check
+                      className='with_set'
+                      type="checkbox"
+                      id={`default-checkbox1`}
+                      checked={isChecked1}
+                      onChange={() => handleCheckboxChange(1)}
+                    />
                     </div>
                     <div className='col-9'>
                       <h2 className='tx_bold'>14-Day Full Access</h2>
@@ -112,7 +131,7 @@ export default function Getway05() {
 
                   <div className='justify-center mt-5 ms-3 me-3 row d-flex'>
                     <div className='mb-4 continue_btn'>
-                <Link to="/Getway01"><h4 className='mt-1 color_white'>CONTINUE</h4></Link>
+                <button onClick={()=>{navigate(`/Getway01`,{state:{packageDetails:packageDetails}})}}><h4 className='mt-1 color_white'>CONTINUE</h4></button>
                     </div>
                   </div>
                 </div>
@@ -126,11 +145,13 @@ export default function Getway05() {
                       <h2 className='tx_bold ms-5'>Monthly Access</h2>
                     </div>
                     <div className='justify-center col-3 d-flex'>
-                      <Form.Check
-                        className='with_set'
-                        type="checkbox"
-                        id={`default-checkbox`}
-                      />
+                    <Form.Check
+                      className='with_set'
+                      type="checkbox"
+                      id={`default-checkbox2`}
+                      checked={isChecked2}
+                      onChange={() => handleCheckboxChange(2)}
+                    />
                     </div>
                   </div>
                   <div className='mt-2 row'>

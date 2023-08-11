@@ -1,9 +1,30 @@
-import React from 'react'
+import { React, useState } from 'react';
 import "./Getway01.css";
 import Footer from "../components/Footer";
 import Heder_nav2 from "../components/Heder_nav2";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import Token from "../services/token/Token";
+import ToasterMessage from "../helpers/ToasterMessage";
 
 export default function Getway01() {
+  const token = Token.getAccessToken();
+  const user = Token.getAuth(token);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const packageDetails = location.state?.packageDetails ?? " ";
+
+  const onPay = async (e) => {
+    e.preventDefault();
+    console.log('user: ',user)
+    if(user.role === "NORMAL_USER"){
+      navigate(`/Getway04`,{state:{packageDetails:packageDetails}})
+    }else if(user.role === "PREMIUM_USER"){
+      ToasterMessage.ErrorMessage({
+        custom_message: 'You are already using an upgraded plan!',
+    });
+    }
+  }
+
   return (
     <div>
 
@@ -47,9 +68,9 @@ export default function Getway01() {
 
             <div className='justify-center mt-5 col-12 d-flex'>
               <div className='justify-center row d-flex'>
-                <div className='round_btn'>
+                <button onClick={onPay} className='round_btn'>
                   <img src="./images/Right.png" alt="" />
-                </div>
+                </button>
               </div>
             </div>
 
