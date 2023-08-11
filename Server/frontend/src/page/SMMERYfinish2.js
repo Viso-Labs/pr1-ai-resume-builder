@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useState }from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Footer3 from "../components/Footer3";
@@ -7,8 +7,33 @@ import "./SMMERYfinish2.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import AI_Services from "../services/AI_services";
+import { EditorState, convertToRaw } from "draft-js";
 
 export default function SMMERYfinish2() {
+  const navigate = useNavigate();
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [description, setDescription] = useState('');
+
+  const handleEditorChange = (newEditorState) => {
+    setEditorState(newEditorState);
+    const contentState = convertToRaw(newEditorState.getCurrentContent());
+    const contentText = contentState.blocks
+      .map((block) => block.text)
+      .join('\n');
+    setDescription(contentText);
+  };
+
+  const onSubmit = async (e) => {
+    try {
+        const modifiedText = await AI_Services.getBulletPoints({description:description});
+        if (modifiedText) {
+            navigate(`/SMMERYfinish3`,{state:{modifiedText:modifiedText}})
+        }
+      } catch (error) {
+      }
+  }
   return (
     <div>
       <div>
@@ -178,6 +203,8 @@ export default function SMMERYfinish2() {
                     <h4 className="txblue_d">What are your affiliations?</h4>
                     
                     <Editor
+                      editorState={editorState}
+                      onEditorStateChange={handleEditorChange}
                       toolbarClassName="toolbarClassName"
                       wrapperClassName="wrapperClassName"
                       editorClassName="editorClassName"
@@ -198,11 +225,20 @@ export default function SMMERYfinish2() {
                           <h4 className="mt-2">BACK</h4>
                         </div></Link>
                       </div>
-                      <div className="justify-end col-6 d-flex">
+
+                      {/* <div className="justify-end col-6 d-flex">
                       <Link to="/SMMERYfinish3"><div className="nextbtn2">
                           <h4 className="mt-2">NEXT</h4>
                         </div></Link>
-                      </div>
+                      </div> */}
+
+                      <button onClick={onSubmit} className="justify-end col-6 d-flex">
+                        <div className="nextbtn2">
+                          <h4 className="mt-2">NEXT</h4>
+                          {/* loading icon */}
+                        </div>
+                      </button>
+
                     </div>
             </div>
           </div>

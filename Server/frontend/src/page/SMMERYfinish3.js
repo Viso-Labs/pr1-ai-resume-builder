@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useState }from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Footer3 from "../components/Footer3";
@@ -6,12 +6,42 @@ import Heder_nav4 from "../components/Heder_nav4";
 import "./SMMERYfinish3.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { EditorState, convertFromRaw, convertToRaw } from "draft-js";
 
 export default function SMMERYfinish3() {
 
   const navigate = useNavigate();
-    
+  const location = useLocation();
+  const modifiedText = location.state?.modifiedText ?? " ";
+
+  const initialContent = {
+    blocks: [
+      {
+        text: modifiedText,
+        type: "unstyled",
+        entityRanges: [],
+      },
+    ],
+    entityMap: {},
+  };
+
+  const initialEditorState = EditorState.createWithContent(
+    convertFromRaw(initialContent)
+  );
+
+  const [editorState, setEditorState] = useState(initialEditorState);
+  const [description, setDescription] = useState();
+
+  const handleEditorChange = (newEditorState) => {
+    setEditorState(newEditorState);
+    const contentState = convertToRaw(newEditorState.getCurrentContent());
+    const contentText = contentState.blocks
+      .map((block) => block.text)
+      .join('\n');
+    setDescription(contentText);
+  };
+
   const next_Finsh = () =>{
 
       sessionStorage.setItem("head6", true);
@@ -39,6 +69,8 @@ export default function SMMERYfinish3() {
                     <div className="row">
 
                       <Editor
+                        editorState={editorState}
+                        onEditorStateChange={handleEditorChange}
                         toolbarClassName="toolbarClassName"
                         wrapperClassName="wrapperClassName"
                         editorClassName="editorClassName"
