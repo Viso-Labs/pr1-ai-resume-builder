@@ -6,7 +6,7 @@ import {Link,useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestoredb } from '../firebase';
 import { collection, addDoc } from "firebase/firestore";
-
+import AuthServices from "../services/AuthServices";
 
 
 export default function LogIn() {
@@ -16,7 +16,23 @@ export default function LogIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
   
-    const onLogin = (e) => {
+    const onLogin = async (e) => {
+        try {
+            const userData = await AuthServices.login({email:email, password:password});
+            if (userData) {
+                console.log('userData: ',userData);
+                // await onLoginFirebase(e);
+                if(email==="admin2@gmail.com" && password==="admin123"){
+                    navigate("/Admin")
+                }else{
+                    navigate("/DashBoard01")
+                }
+            }
+          } catch (error) {
+          }
+    }
+
+    const onLoginFirebase = (e) => {
         
       e.preventDefault();
       signInWithEmailAndPassword(auth, email, password)
@@ -87,6 +103,7 @@ export default function LogIn() {
                                             </div>
                                         </InputGroup.Text>
                                         <Form.Control
+                                            type="password"
                                             className='bg_input2'
                                             aria-label="Large"
                                             aria-describedby="inputGroup-sizing-sm"

@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./DashBoard01.css";
 import Footer from "../components/Footer";
 import Heder_nav from "../components/Heder_nav";
+import Token from "../services/token/Token";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function DashBoard01() {
 
+  //check user role and navigate to upgrade the service -> '/Getway05'
+  const token = Token.getAccessToken();
+  const user = Token.getAuth(token);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const currentDate = new Date();
+    const initDate = new Date(user.roleInit);  
+    const expireDate = new Date(user.roleExpire);  
+    if(currentDate>expireDate){
+      navigate("/Getway05");
+    }
+  }, [])
+  
   const cut = () => {
     const popbox = document.getElementsByClassName("hiddenpopbox");
     popbox[0].style.position = "absolute";
