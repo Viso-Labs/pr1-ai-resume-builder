@@ -173,22 +173,28 @@ export default function WorkHistoy3() {
             var data = location.state.data;
             console.log(data);
 
-            let response = await fetch("http://localhost:3000/generate-pdf", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(data),
-            });
-            setStatus("Submit");
-            let result = await response.json();
-            sessionStorage.setItem("pdflink", result.downloadLink);
-            sessionStorage.setItem("head3", true);
             navigate("/Noexperience", {
                 state: {
                   data
                 }
               });
+
+            // let response = await fetch("http://localhost:3000/generate-pdf", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json;charset=utf-8",
+            //     },
+            //     body: JSON.stringify(data),
+            // });
+            // setStatus("Submit");
+            // let result = await response.json();
+            // sessionStorage.setItem("pdflink", result.downloadLink);
+            // sessionStorage.setItem("head3", true);
+            // navigate("/Noexperience", {
+            //     state: {
+            //       data
+            //     }
+            //   });
 
             // console.log(location.state.data);
             

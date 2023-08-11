@@ -48,6 +48,8 @@ import SMMERYfinish2 from "./page/SMMERYfinish2";
 import SMMERYfinish3 from "./page/SMMERYfinish3";
 import Pdfview from './page/Pdfview';
 import SignupAccoyunt from './page/SignupAccoyunt';
+import GeneratePdf from './page/GeneratePdf';
+
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -68,15 +70,6 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/Finnishsec" element={<Finnishsec/>} />
-        <Route path="/Finnishsec2" element={<Finnishsec2/>} />
-        <Route path="/Finnishsec3" element={<Finnishsec3/>} />
-        <Route path="/Finnishsec4" element={<Finnishsec4 />} />
-        <Route path="/Finishted" element={<Finishted/>}/>
-        <Route path="/SMMERY01" element={<SMMERY01 />}/>
-        <Route path="/SMMERYfinish" element={<SMMERYfinish />} />
-        <Route path="/SMMERYfinish2" element={<SMMERYfinish2 />} />
-        <Route path="/SMMERYfinish3" element={<SMMERYfinish3 />} />
         <Route path="/ChooseTemplate" element={<ChooseTemplate />} />
         <Route path="/CoverLetter" element={<CoverLetter />} />
         <Route path="/CoverTemp" element={<CoverTemp />} />
@@ -103,17 +96,27 @@ function App() {
         <Route path="/WorkHistoy" element={<WorkHistoy />} />
         <Route path="/WorkHistoy2" element={<WorkHistoy2 />} />
         <Route path="/WorkHistoy3" element={<WorkHistoy3 />} />
-        <Route path="/WorkHistoy4" element={<WorkHistoy4 />} />
         <Route path="/Noexperience" element={<Noexperience />} />
+        <Route path="/WorkHistoy4" element={<WorkHistoy4 />} />
         <Route path="/EducationPreveiw" element={<EducationPreveiw />} />
-        <Route path="/SKIllsSummry" element={<SKIllsSummry />} />
         <Route path="/SKIllPic" element={<SKIllPic/>} />
+        <Route path="/SKIllsSummry" element={<SKIllsSummry />} />
+        <Route path="/SMMERY01" element={<SMMERY01 />}/>
+        <Route path="/SMMERYfinish" element={<SMMERYfinish />} />
+        <Route path="/SMMERYfinish2" element={<SMMERYfinish2 />} />
+        <Route path="/SMMERYfinish3" element={<SMMERYfinish3 />} />
+        <Route path="/Finishted" element={<Finishted/>}/>
+        <Route path="/Finnishsec" element={<Finnishsec/>} />
+        <Route path="/Finnishsec2" element={<Finnishsec2/>} />
+        <Route path="/Finnishsec3" element={<Finnishsec3/>} />
+        <Route path="/Finnishsec4" element={<Finnishsec4 />} />
         <Route path="/ResumBuilder" element={<ResumBuilder />} />
         <Route path="/ResumTemp" element={<ResumTemp />} />
         <Route path="/ResumExample" element={<ResumExample/>} />
         <Route path="/ResumExample2" element={<ResumExample2/>} /> 
         <Route path="/Pdfview" element={<Pdfview/>} /> 
-        <Route path="/SignupAccoyunt" element={<SignupAccoyunt/>} />      
+        <Route path="/SignupAccoyunt" element={<SignupAccoyunt/>} />   
+        <Route path="/generatePdf" element={<GeneratePdf />} />
       </Routes>
     </BrowserRouter>
     </div>

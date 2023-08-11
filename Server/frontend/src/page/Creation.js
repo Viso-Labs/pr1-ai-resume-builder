@@ -224,24 +224,30 @@ export default function Creation() {
             data.phone = Phone;
             data.email = Email;
 
-
-            let response = await fetch("http://localhost:3000/generate-pdf", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(data),
-            });
-            setStatus("Submit");
-            let result = await response.json();
-
-            sessionStorage.setItem("head2", true);
-            sessionStorage.setItem("pdflink", result.downloadLink);
             navigate("/WorkHistoy", {
                 state: {
                   data
                 }
-              });
+            });
+
+            // let response = await fetch("http://localhost:3000/generate-pdf", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json;charset=utf-8",
+            //     },
+            //     body: JSON.stringify(data),
+            // });
+            // setStatus("Submit");
+            // let result = await response.json();
+
+            // sessionStorage.setItem("head2", true);
+            // sessionStorage.setItem("pdflink", result.downloadLink);
+            // navigate("/WorkHistoy", {
+            //     state: {
+            //       data
+            //     }
+            //   });
+
         }
 
 
