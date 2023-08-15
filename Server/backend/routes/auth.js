@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const fakeLocal = require("../database/fakeLocal.json");
 const User = require("../models/userModel");
-const {userSignUp, userLogin} = require('../controllers/authController');
+const {userSignUp, userLogin, passwordReset, newLinkForPassword} = require('../controllers/authController');
 
 function getJwt() {
     return fakeLocal.Authorization?.substring(7); 
@@ -38,5 +38,7 @@ router.post('/login', function (req, res, next) {
   
 
 router.post('/signup', userSignUp);
+router.post('/request-reset-password', newLinkForPassword);
+router.post('/reset-password', passwordReset);
 
 module.exports = router;
