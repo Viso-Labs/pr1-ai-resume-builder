@@ -59,8 +59,46 @@ const logout = async () => {
   }
 };
 
+const resetPassword = async (data) => {
+  try {
+    const response = await axios.post("/auth/reset-password", data);
+    if(response.status === 200 || response.status === 202){
+      ToasterMessage.SuccessMessage({
+        message: "Sent the password reset link to the user email successfully!",
+      });
+      return true
+    }
+  } catch (error) {
+    ToasterMessage.ErrorMessage({
+      error: error,
+    });
+    throw error;
+  }
+};
+
+const requestResetPassword = async (data) => {
+  try {
+    const response = await axios.post("/auth/request-reset-password", data);
+    if(response.status === 200 || response.status === 202){
+      ToasterMessage.SuccessMessage({
+        message: "Sent the password reset link to the user email successfully!",
+      });
+      return true
+    }
+  } catch (error) {
+    ToasterMessage.ErrorMessage({
+      error: error,
+    });
+    throw error;
+  }
+};
+
+
+
 export default {
   login,
   logout,
   signUp,
+  resetPassword,
+  requestResetPassword
 };

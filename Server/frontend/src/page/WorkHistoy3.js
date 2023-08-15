@@ -12,7 +12,8 @@ export default function WorkHistoy3() {
 
     const navigate = useNavigate();
     const location = useLocation();
-
+    const resumeData = location?.state?.data??{};
+    console.log("resumeDetails::: ",resumeData)
     
     const [title, settitle] = useState('')
     const [employee, setemployee] = useState('');
@@ -164,18 +165,17 @@ export default function WorkHistoy3() {
         }
         else{
             
-            location.state.data.job_title=title;
-            location.state.data.employer=employee;
-            location.state.data.city=city;
-            location.state.data.country=country;
-            location.state.data.start=startdate;
-            location.state.data.end=enddate;
-            var data = location.state.data;
-            console.log(data);
+            resumeData.job_title=title;
+            resumeData.employer=employee;
+            resumeData.city=city;
+            resumeData.country=country;
+            resumeData.start=startdate;
+            resumeData.end=enddate;
+            console.log(resumeData);
 
             navigate("/Noexperience", {
                 state: {
-                  data
+                  data:resumeData
                 }
               });
 

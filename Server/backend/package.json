@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/nodejs": "^2.2.0",
     "@joi/date": "^2.1.0",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",

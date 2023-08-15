@@ -6,13 +6,16 @@ import Heder_nav4 from "../components/Heder_nav4";
 import "./SMMERYfinish2.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import AI_Services from "../services/AI_services";
 import { EditorState, convertToRaw } from "draft-js";
 
 export default function SMMERYfinish2() {
+  const location = useLocation();
   const navigate = useNavigate();
+  const resumeDetails = location?.state?.data??null;
+  console.log("resumeDetails::: ",resumeDetails)
+
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [description, setDescription] = useState('');
 
@@ -28,9 +31,10 @@ export default function SMMERYfinish2() {
   const onSubmit = async (e) => {
     try {
         const modifiedText = await AI_Services.getBulletPoints({description:description});
-        if (modifiedText) {
-            navigate(`/SMMERYfinish3`,{state:{modifiedText:modifiedText}})
-        }
+        resumeDetails["affiliations"] = modifiedText;
+        navigate("/SMMERYfinish3", {state: {
+          data : resumeDetails
+        }});
       } catch (error) {
       }
   }
@@ -221,7 +225,7 @@ export default function SMMERYfinish2() {
               </div>
               <div className="mt-3 mb-5 row">
                       <div className="justify-start col-6 d-flex">
-                      <Link to="/SMMERYfinish1"><div className="backbtn">
+                      <Link to="/SMMERYfinish"><div className="backbtn">
                           <h4 className="mt-2">BACK</h4>
                         </div></Link>
                       </div>
@@ -232,12 +236,11 @@ export default function SMMERYfinish2() {
                         </div></Link>
                       </div> */}
 
-                      <button onClick={onSubmit} className="justify-end col-6 d-flex">
-                        <div className="nextbtn2">
+                      <div className="justify-end col-6 d-flex">
+                        <button onClick={onSubmit}  className="nextbtn2">
                           <h4 className="mt-2">NEXT</h4>
-                          {/* loading icon */}
-                        </div>
-                      </button>
+                        </button>
+                      </div>
 
                     </div>
             </div>

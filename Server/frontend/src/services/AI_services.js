@@ -6,7 +6,7 @@ const getBulletPoints = async (data) => {
     const token = Token.getAccessToken();
     const user = Token.getAuth(token);
 
-    if(user.role === "PREMIUM_USER"){
+    if(user?.role === "PREMIUM_USER" && data?.description){
       try {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         const response = await axios.post("/api/getBulletPoints", data);

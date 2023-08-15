@@ -49,6 +49,7 @@ import SMMERYfinish3 from "./page/SMMERYfinish3";
 import Pdfview from './page/Pdfview';
 import SignupAccoyunt from './page/SignupAccoyunt';
 import GeneratePdf from './page/GeneratePdf';
+import ResetPassword from './page/ResetPassword';
 
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -70,6 +71,7 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/PasswordReset/:token" element={<ResetPassword/>}/>
         <Route path="/ChooseTemplate" element={<ChooseTemplate />} />
         <Route path="/CoverLetter" element={<CoverLetter />} />
         <Route path="/CoverTemp" element={<CoverTemp />} />
@@ -91,7 +93,7 @@ function App() {
         <Route path="/Experience" element={<Experience />} />
         <Route path="/SelectCoun" element={<SelectCoun />} />
         <Route path="/Already" element={<Already />} />
-        <Route path="/LogIn" element={<LogIn />} />
+        <Route path="/login" element={<LogIn />} />
         <Route path="/Creation" element={<Creation />} />
         <Route path="/WorkHistoy" element={<WorkHistoy />} />
         <Route path="/WorkHistoy2" element={<WorkHistoy2 />} />

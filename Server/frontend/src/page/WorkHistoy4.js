@@ -20,6 +20,9 @@ export default function WorkHistoy4() {
     const [gradeendd, setgradeendd] = useState('')
     const [filedofstudy, setfiledofstudy] = useState('');
 
+    const resumeDetails = location?.state?.data??{};
+    console.log("resumeDetails::: ",resumeDetails)
+
     const changesclname = (event) => {
 
         setsclname(event.target.value);
@@ -78,19 +81,14 @@ export default function WorkHistoy4() {
 
     };
     const changegradeendd = (event) => {
-
         setgradeendd(event.target.value);
         var id = document.getElementById("gradeenddid");
-
         if (gradeendd !== "") {
-
             id.style.display = "block";
         }
         else {
             id.style.display = "none";
-
         }
-
     };
     const changefiledofstudy = (event) => {
 
@@ -154,27 +152,28 @@ export default function WorkHistoy4() {
         }
         else {
 
-            location.state.data.sclname = sclname;
-            location.state.data.scllocation = scllocation;
-            location.state.data.degree = dgree;
-            location.state.data.gradestartdate = gradestartd;
-            location.state.data.graductionendday = gradeendd;
-            location.state.data.filedofstudy = filedofstudy;
-            var data = location.state.data;
-            console.log(data);
+            resumeDetails.sclname = sclname;
+            resumeDetails.scllocation = scllocation;
+            resumeDetails.degree = dgree;
+            resumeDetails.gradestartdate = gradestartd;
+            resumeDetails.graductionendday = gradeendd;
+            resumeDetails.filedofstudy = filedofstudy;
+            navigate("/EducationPreveiw", {state: {
+                data : resumeDetails
+            }});
 
-            let response = await fetch("http://localhost:3000/generate-pdf", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(data),
-            });
-            let result = await response.json();
-            sessionStorage.setItem("pdflink", result.downloadLink);
 
-            sessionStorage.setItem("head4", true);
-            navigate("/EducationPreveiw");
+            // let response = await fetch("http://localhost:3000/generate-pdf", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json;charset=utf-8",
+            //     },
+            //     body: JSON.stringify(data),
+            // });
+            // let result = await response.json();
+            // sessionStorage.setItem("pdflink", result.downloadLink);
+
+            // sessionStorage.setItem("head4", true);
 
             
         }

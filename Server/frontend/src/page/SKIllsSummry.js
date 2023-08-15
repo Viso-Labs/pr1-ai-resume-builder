@@ -4,12 +4,26 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./SKIllsSummry.css";
-import { Link } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
+import {Link, useNavigate,useLocation} from 'react-router-dom';
+
 
 
 
 export default function SKIllsSummry() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const resumeDetails = location?.state?.data??{};
+    console.log("resumeDetails::: ",resumeDetails)
+    
+    const onChange = () =>{
+
+        sessionStorage.setItem("head5", true);
+        navigate("/SMMERYfinish", {state: {
+            data : resumeDetails
+        }});
+        
+    }
+
     return (
         <div>
             <div>
@@ -53,9 +67,9 @@ export default function SKIllsSummry() {
                                         <div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'></h6>
                                         </div>
-                                        <Link to="/SMMERY01"><div className='nextbtn2'>
+                                        <button onClick={onChange}><div className='nextbtn2'>
                                   <h4 className='mt-2'>Next</h4>
-                                        </div></Link>
+                                        </div></button>
                                     </div>
                                 </div>
                             </div>

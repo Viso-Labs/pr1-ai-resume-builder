@@ -27,7 +27,7 @@ export default function Creation() {
     var data = {
         fristname:"", surname:"", profession:"", district:"", biocountry:"", postalcode:"", phone:"", email:"",
         job_title:"", employer:"", city:"", country:"", start:"", end:"", sclname:"", scllocation:"", degree:"", 
-        gradestartdate:"", filedofstudy:"", graductionendday:"", skill:"", summeary:"",type:""
+        gradestartdate:"", filedofstudy:"", graductionendday:"", skill:"", summary:"",type:""
     }
 
     const changefristname = (event) => {
@@ -230,7 +230,7 @@ export default function Creation() {
                 }
             });
 
-            // let response = await fetch("http://localhost:3000/generate-pdf", {
+            // let response = await fetch("http://localhost:3000/api/generate-pdf", {
             //     method: "POST",
             //     headers: {
             //         "Content-Type": "application/json;charset=utf-8",

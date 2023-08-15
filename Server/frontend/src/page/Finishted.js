@@ -4,12 +4,20 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./Finishted.css";
-import { Link } from 'react-router-dom';
-
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Finishted() {
-
+    const location = useLocation();
+    const navigate = useNavigate();
+    const resumeDetails = location?.state?.data??{};
+    console.log("resumeDetails::: ",resumeDetails)
+    
+    const onChange = () =>{
+        navigate("/Finnishsec", {state: {
+            data : resumeDetails
+        }});
+        
+    }
 
     const cut = () => {
         const popbox = document.getElementsByClassName("bg_popboxfinish");
@@ -175,9 +183,11 @@ export default function Finishted() {
                                         <div className='align-middle d-flex wi'>
                                             <h6 className='mt-2 ms-3 me-3 tx54'></h6>
                                         </div>
-                                        <Link to="/Finnishsec"><div className='nextbtn2'>
-                                            <h4 className='mt-2'>Next</h4>
-                                        </div></Link>
+                                        <button onClick={onChange}>
+                                            <div className='nextbtn2'>
+                                                <h4 className='mt-2'>Next</h4>
+                                            </div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

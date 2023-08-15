@@ -16,6 +16,31 @@ const login_validation = (data) => {
     return schema.validate(data, { abortEarly: false });
 }
 
+const emailVerify = (data) => {
+    const schema = Joi.object({
+        email: Joi.string().email({minDomainSegments: 2,tlds: { allow: ["com", "net"]}}).required()
+        .messages({
+            "string.empty": "Field should not be empty!",
+            "string.required": "Field is required!",
+            "string.email": "Enter a valid email address!"
+        }),
+    })
+    return schema.validate(data, { abortEarly: false });
+}
+
+const reset_password_validation = (data) => {
+    const schema = Joi.object({
+        email: Joi.string().email({minDomainSegments: 2,tlds: { allow: ["com", "net"]}}).required()
+        .messages({
+            "string.empty": "Field should not be empty!",
+            "string.required": "Field is required!",
+            "string.email": "Enter a valid email address!"
+        }),
+        password: password_joi_object(),
+    })
+    return schema.validate(data, { abortEarly: false });
+}
+
 const register_validation = (data) => {
     const schema = Joi.object({
         fullName: Joi.string().required()
@@ -62,4 +87,6 @@ const custom_password = (value, helper) => {
 module.exports = {
     register_validation,
     login_validation,
+    reset_password_validation,
+    emailVerify
 }

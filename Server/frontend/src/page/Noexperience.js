@@ -15,11 +15,13 @@ export default function Noexperience() {
 
 
     const nextpage = () =>{
-        var data = location.state.data;
-        console.log(data);
+        // var data = location.state.data;
+        const resumeDetails = location?.state?.data??{};
+        console.log("resumeDetails::: ",resumeDetails)
+
         navigate("/WorkHistoy4", {
             state: {
-                data
+                data: resumeDetails
             }
         });
     }

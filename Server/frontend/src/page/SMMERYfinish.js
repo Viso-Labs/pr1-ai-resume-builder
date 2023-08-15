@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useState }from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Footer3 from "../components/Footer3";
@@ -6,9 +6,37 @@ import Heder_nav4 from "../components/Heder_nav4";
 import "./SMMERYfinish.css";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Link } from "react-router-dom";
+import {Link, useNavigate,useLocation} from 'react-router-dom';
+import { EditorState, convertToRaw } from "draft-js";
 
 export default function SMMERYfinish() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const resumeDetails = location?.state?.data??{};
+  console.log("resumeDetails::: ",resumeDetails)
+
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [description, setDescription] = useState('');
+
+  const handleEditorChange = (newEditorState) => {
+    setEditorState(newEditorState);
+    const contentState = convertToRaw(newEditorState.getCurrentContent());
+    const contentText = contentState.blocks
+      .map((block) => block.text)
+      .join('\n');
+    setDescription(contentText);
+  };
+  
+  const onChange = () =>{
+
+      sessionStorage.setItem("head5", true);
+      resumeDetails["accomplishments"] = description;
+      navigate("/SMMERYfinish2", {state: {
+          data : resumeDetails
+      }});
+      
+  }
+  
   return (
     <div>
       <div>
@@ -178,6 +206,8 @@ export default function SMMERYfinish() {
                     <h4 className="txblue_d">Tell us about your accomplishments</h4>
                     
                     <Editor
+                      editorState={editorState}
+                      onEditorStateChange={handleEditorChange}
                       toolbarClassName="toolbarClassName"
                       wrapperClassName="wrapperClassName"
                       editorClassName="editorClassName"
@@ -199,9 +229,11 @@ export default function SMMERYfinish() {
                         </div></Link>
                       </div>
                       <div className="justify-end col-6 d-flex">
-                      <Link to="/SMMERYfinish2"><div className="nextbtn2">
+                      <div onClick={onChange}>
+                        <div className="nextbtn2">
                           <h4 className="mt-2">NEXT</h4>
-                        </div></Link>
+                        </div>
+                      </div>
                       </div>
                     </div>
             </div>

@@ -1,22 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Footer3 from "../components/Footer3";
 import Heder_nav4 from "../components/Heder_nav4";
 import "./SKIllPic.css";
-import { Link,useNavigate } from 'react-router-dom';
+import {Link, useNavigate,useLocation} from 'react-router-dom';
+
 
 
 
 export default function SKIllPic() {
+    const location = useLocation();
     const navigate = useNavigate();
+    const resumeDetails = location?.state?.data??{};
+    console.log("resumeDetails::: ",resumeDetails)
+
+    const [highlightSkill, setHighlightSkill] = useState('')
+
+    const changeHighlightSkill = (event) => {
+        setHighlightSkill(event.target.value);
+    };
     
     const next_SUM = () =>{
-
         sessionStorage.setItem("head5", true);
-        navigate("/SKIllsSummry");
+        navigate("/SKIllsSummry", {state: {
+            data : resumeDetails
+        }});
         
     }
+
     return (
         <div>
             <div>
@@ -162,6 +174,7 @@ export default function SKIllPic() {
                                                         placeholder=""
                                                         aria-label="Recipient's username"
                                                         aria-describedby="basic-addon2"
+                                                        onChange={changeHighlightSkill}
                                                     />
                                                 </InputGroup>
                                                 <img className='ms-1 me-1' src="./images/bin2.png" alt="" />

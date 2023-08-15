@@ -5,9 +5,20 @@ import Footer3 from "../components/Footer3";
 import Heder_nav7 from "../components/Heder_nav7";
 import Dropdown from 'react-bootstrap/Dropdown';
 import "./Finnishsec3.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Finnishsec3() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const resumeDetails = location?.state?.data??JSON.parse(localStorage.getItem("resumeDetails"));
+  console.log("resumeDetails in 3::: ",resumeDetails)
+    
+  const onChange = () =>{
+      navigate("/Finnishsec4", {state: {
+          data : resumeDetails
+      }});
+  }
+
   return (
     <div>
       <div className="bodyfc1">
@@ -67,15 +78,21 @@ export default function Finnishsec3() {
         </div>
 
         <div className="'row potiback">
-        <Link to="/Finnishsec2"><div className="col-12">
+
+        <button to="/Finnishsec2">
+          <div className="col-12">
             <img src="./images/BACK.png" alt="" />
-          </div></Link>
+          </div>
+        </button>
+
         </div>
 
         <div className="'row potinext">
-        <Link to="/Finnishsec4"><div className="col-12">
+        <button onClick={onChange}>
+          <div className="col-12">
             <img src="./images/NEXT.png" alt="" />
-          </div></Link>
+          </div>
+        </button>
         </div>
 
         <Footer3 />

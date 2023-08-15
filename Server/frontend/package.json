@@ -20,6 +20,7 @@
     "firebase": "^9.22.0",
     "froala-editor": "^4.0.18",
     "html-to-image": "^1.11.11",
+    "html2pdf.js": "^0.10.1",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",

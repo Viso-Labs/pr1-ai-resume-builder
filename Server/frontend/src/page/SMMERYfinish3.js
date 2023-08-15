@@ -13,7 +13,9 @@ export default function SMMERYfinish3() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const modifiedText = location.state?.modifiedText ?? " ";
+  const resumeDetails = location?.state?.data??{};
+  console.log("resumeDetails::: ",resumeDetails)
+  const modifiedText = resumeDetails?.affiliations ?? "";
 
   const initialContent = {
     blocks: [
@@ -45,7 +47,9 @@ export default function SMMERYfinish3() {
   const next_Finsh = () =>{
 
       sessionStorage.setItem("head6", true);
-      navigate("/Finishted");
+      navigate("/Finishted",{state: {
+        data : resumeDetails
+    }});
       
   }
 

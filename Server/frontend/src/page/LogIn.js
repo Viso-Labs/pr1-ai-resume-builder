@@ -6,7 +6,12 @@ import {Link,useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestoredb } from '../firebase';
 import { collection, addDoc } from "firebase/firestore";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import AuthServices from "../services/AuthServices";
+import ForgetPasswordModal from "../components/forgetPassword/ForgetPasswordModal"
 
 
 export default function LogIn() {
@@ -15,6 +20,14 @@ export default function LogIn() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const forgetPassword = ()=> {
+        handleOpen();
+    }
   
     const onLogin = async (e) => {
         try {
@@ -127,9 +140,13 @@ export default function LogIn() {
                             </div>
                             <div className='justify-center mb-3 col-12 d-flex bottomBorder'>
                                 <div className='row'>
-                                    <div className='justify-center mt-4 col-12 d-flex'>
+                                    
+                                    <button onClick={forgetPassword} className='justify-center mt-4 col-12 d-flex'>
                                         <h5 className=''>Forgot your password?</h5>
-                                    </div>
+                                    </button>
+
+                                    <ForgetPasswordModal setCall={setOpen} call={open} />
+
                                     <div className='justify-center col-12 d-flex'>
                                         <h4 className=''>Don't have an account? <span className='tx_endlog'>Sign Up</span></h4>
                                     </div>

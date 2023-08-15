@@ -31,25 +31,26 @@ export default function WorkHistoy() {
 
     const chosseone = () => {
 
-        var data = location.state.data;
+        const resumeDetails = location?.state?.data??{};
+        console.log("resumeDetails::: ",resumeDetails)
+
 
         if (seletct == "A STUDENT OF MY IT UNIVERSITY") {
             sessionStorage.setItem("usertype", seletct);
-            location.state.data.type = seletct;
+            resumeDetails["type"] = seletct;
             navigate("/WorkHistoy2", {
                 state: {
-                    data
+                    data:resumeDetails
                 }
             });
 
         }
         else if (seletct == "A DIFFERENT PERSON") {
             sessionStorage.setItem("usertype", seletct);
-            location.state.data.type = seletct;
-            
+            resumeDetails["type"] = seletct;
             navigate("/WorkHistoy2", {
                 state: {
-                    data
+                    data: resumeDetails
                 }
             });
 

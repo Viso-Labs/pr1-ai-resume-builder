@@ -19,11 +19,12 @@ export default function WorkHistoy2() {
     }
 
     const nexpage = () =>{
-        var data = location.state.data;
-        console.log(data);
+        const resumeData = location?.state?.data??{};
+        console.log("resumeDetails::: ",resumeData)
+
         navigate("/WorkHistoy3", {
             state: {
-                data
+                data: resumeData
             }
         });
     }
