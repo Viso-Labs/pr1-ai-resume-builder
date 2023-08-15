@@ -45,6 +45,7 @@ import SMMERYfinish from "./page/SMMERYfinish";
 import SMMERYfinish2 from "./page/SMMERYfinish2";
 import SMMERYfinish3 from "./page/SMMERYfinish3";
 import GeneratePdf from './page/GeneratePdf';
+import Cover from './page/cover';
 
 function App() {
   return (
@@ -94,6 +95,7 @@ function App() {
         <Route path="/ResumExample" element={<ResumExample />} />
         <Route path="/ResumExample2 " element={<ResumExample2 />} />
         <Route path="/generatePdf" element={<GeneratePdf />} />
+        <Route path="/cover" element={<Cover />} />
       </Routes>
     </BrowserRouter>
 

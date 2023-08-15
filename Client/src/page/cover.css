@@ -1,0 +1,112 @@
+.john-smith {
+    position: absolute;
+    top: 24px;
+    left: 25px;
+    font-size: 32px;
+    display: inline-block;
+    width: 196px;
+    height: 40px;
+  }
+  .flowerville-06012017,
+  .marketing-specialist {
+    position: absolute;
+    left: 25px;
+    font-weight: 500;
+    display: inline-block;
+    height: 27px;
+  }
+  .marketing-specialist {
+    top: 72px;
+    font-size: 16px;
+    width: 174px;
+  }
+  .flowerville-06012017 {
+    top: 126px;
+    width: 192px;
+  }
+  .ms-katherine-bloomstein {
+    margin: 0;
+    font-weight: 600;
+  }
+  .blank-line {
+    margin: 0;
+    font-weight: 500;
+  }
+  .ms-katherine-bloomstein-container {
+    position: absolute;
+    top: 180px;
+    left: 25px;
+    display: inline-block;
+    width: 231px;
+    height: 71px;
+  }
+  .xyz-company {
+    margin: 0;
+  }
+  .as-a-lifelong-container,
+  .dear-katherine,
+  .xyz-company-099-peony-container {
+    position: absolute;
+    top: 278px;
+    left: 25px;
+    display: inline-block;
+    width: 218px;
+    height: 58px;
+  }
+  .as-a-lifelong-container,
+  .dear-katherine {
+    top: 355px;
+    width: 172px;
+    height: 25px;
+  }
+  .as-a-lifelong-container {
+    top: 389px;
+    white-space: pre-wrap;
+    width: 494px;
+    height: 569px;
+  }
+  .personal-info1 {
+    text-decoration: underline;
+  }
+  .phone1,
+  .span {
+    font-family: var(--font-inter);
+  }
+  .phone1 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+  .span {
+    font-size: var(--font-size-smi);
+  }
+  .personal-info-phone-container {
+    position: absolute;
+    top: 117px;
+    left: 496px;
+    white-space: pre-wrap;
+    display: inline-block;
+    width: 206px;
+    height: 174px;
+    font-size: var(--font-size-5xl);
+  }
+  /* .pngwing-1-icon {
+    position: absolute;
+    top: 111px;
+    left: 496px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  } */
+  .john-smith-parent {
+    position: relative;
+    background-color: #fff;
+    width: 722px;
+    height: 1021px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-smi);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+    margin-top: 20px;
+  }
+  
