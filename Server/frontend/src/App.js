@@ -50,6 +50,7 @@ import Pdfview from './page/Pdfview';
 import SignupAccoyunt from './page/SignupAccoyunt';
 import GeneratePdf from './page/GeneratePdf';
 import ResetPassword from './page/ResetPassword';
+import Cover from './page/cover';
 
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -119,6 +120,7 @@ function App() {
         <Route path="/Pdfview" element={<Pdfview/>} /> 
         <Route path="/SignupAccoyunt" element={<SignupAccoyunt/>} />   
         <Route path="/generatePdf" element={<GeneratePdf />} />
+        <Route path="/cover" element={<Cover />} />
       </Routes>
     </BrowserRouter>
     </div>

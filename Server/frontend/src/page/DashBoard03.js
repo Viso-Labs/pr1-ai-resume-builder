@@ -1,9 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import "./DashBoard03.css";
 import Footer from "../components/Footer";
 import Heder_nav from "../components/Heder_nav";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import ForgetPasswordModal from "../components/coverLetter/CoverLetterModal"
+
 
 export default function DashBoard03() {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
   const editdash3 = () => {
     alert("edit");
   };
@@ -16,6 +22,10 @@ export default function DashBoard03() {
   const new_creat = () => {
     alert("creat new resum");
   };
+
+  const createCoverPage = () => {
+    setOpen(true);
+  }
 
 
   return (
@@ -67,12 +77,16 @@ export default function DashBoard03() {
             </div>
             <div class="col-3">
               <div class="row">
-                <div class="tool_box">
+
+                <button onClick={createCoverPage} class="tool_box">
                   <div class="row d-flex justify-content-center mt-5">
                     <img class="image_size" src="./images/Letter.png" alt="" />
                   </div>
                   <h4 class="mt-3 ms-3">Create a cover letter</h4>
-                </div>
+                </button>
+
+                <ForgetPasswordModal setCall={setOpen} call={open}/>
+
               </div>
             </div>
           </div>

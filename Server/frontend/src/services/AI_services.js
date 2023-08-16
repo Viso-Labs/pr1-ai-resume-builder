@@ -6,7 +6,7 @@ const getBulletPoints = async (data) => {
     const token = Token.getAccessToken();
     const user = Token.getAuth(token);
 
-    if(user?.role === "PREMIUM_USER" && data?.description){
+    if(user?.role === "PREMIUM_USERR" && data?.description){
       try {
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         const response = await axios.post("/api/getBulletPoints", data);
@@ -24,10 +24,29 @@ const getBulletPoints = async (data) => {
     }else{
       return data?.description
     }
+  };
 
+  const getCoverLetterBody = async (data) => {
+    const token = Token.getAccessToken();
+
+    try {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      const response = await axios.post("/api/getCoverLetterBody", data);
+      if (response.status === 200 || response.status === 202) {
+        return(response.data?.coverLetterBody);
+      } else {
+        ToasterMessage.errorMessage({
+            custom_message: 'Could not create cover letter body, try again!',
+        });
+        return(false);
+      }
+    } catch (error) {
+      return(false);
+    }
   };
 
 
   export default {
     getBulletPoints,
+    getCoverLetterBody
   };

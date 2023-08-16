@@ -19,6 +19,7 @@ export default function Finnishsec4() {
   const [pdfDownloadLink, setPdfDownloadLink] = useState(null);
 
   const onChange = () =>{
+    localStorage.setItem("resumeDetails",JSON.stringify(resumeDetails));
     navigate("/generatePdf", {state: {
         data : resumeDetails
     }});
