@@ -42,7 +42,7 @@ const userSignUp = async (req, res) => {
     try {
         const role1 = "NORMAL_USER"
         const role2 = "PREMIUM_USER"
-        await User.create({ fullName, email, password:hashedPwd, role:role1 });
+        await User.create({ fullName, email, password:hashedPwd, role:role1, "resumeCount":"2", "coverLetterCount":"1" });
         return res.status(200).json({ success: true})
       } catch (error) {
         console.log('error',error)

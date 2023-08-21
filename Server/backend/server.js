@@ -12,7 +12,6 @@ const app = express();
 const port = process.env.PORT;
 const passport = require('passport');
 
-
 // const origin = "http://localhost:3000/"
 // app.use(
 //     cors({
@@ -22,7 +21,6 @@ const passport = require('passport');
 //     })
 //   );
   
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(cookieParser());

@@ -33,23 +33,22 @@ export default function ForgetPasswordModal(props) {
     const postData = {...resumeDetails, ...companyDetails
     }
 
-    const letterBody = "I know that XYZ's current plans involve developing a comprehensiveonline portal focused on healthcare-related issues. This project is aperfect match for my personal and professional interests and an exciting opportunity to create a unique online base of knowledge forpatients and healthcare professionals. I would love to leverage my knowledge of SEO marketing and online growth marketing to achieve groundbreaking results with this initiative. I would welcome the chance to discuss your digital marketing objectives and show you how my success at ABC can translate into digital and online marketing growth for XYZ.";
-    const allData = {...companyDetails, letterBody: letterBody}
+    const letterBody2 = "I know that XYZ's current plans involve developing a comprehensiveonline portal focused on healthcare-related issues. This project is aperfect match for my personal and professional interests and an exciting opportunity to create a unique online base of knowledge forpatients and healthcare professionals. I would love to leverage my knowledge of SEO marketing and online growth marketing to achieve groundbreaking results with this initiative. I would welcome the chance to discuss your digital marketing objectives and show you how my success at ABC can translate into digital and online marketing growth for XYZ.";
+    // const allData = {...companyDetails, letterBody: letterBody2}
+    // navigate("/cover", {state: {
+    //   data : allData
+    // }});
 
-    navigate("/cover", {state: {
-      data : allData
-    }});
-
-    // try {
-    //   const letterBody = await AI_Services.getCoverLetterBody({postData:postData});
-    //   if (letterBody) {
-    //     const allData = {...companyDetails, letterBody: letterBody}
-    //     navigate("/cover", {state: {
-    //       data : allData
-    //     }});
-    //   }
-    // } catch (error) {
-    // }
+    try {
+      const letterBody = await AI_Services.getCoverLetterBody({postData:postData});
+      if (letterBody) {
+        const allData = {...companyDetails, ...resumeDetails}
+        navigate("/cover", {state: {
+          data : allData
+        }});
+      }
+    } catch (error) {
+    }
 
 
   }

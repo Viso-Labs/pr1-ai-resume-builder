@@ -7,6 +7,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./Finnishsec4.css";
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import resumerServices from "../services/resumeServices"
+import ToasterMessage from "../helpers/ToasterMessage";
 
 
 export default function Finnishsec4() {
@@ -18,11 +20,24 @@ export default function Finnishsec4() {
 
   const [pdfDownloadLink, setPdfDownloadLink] = useState(null);
 
-  const onChange = () =>{
+  const onChange = async () =>{
     localStorage.setItem("resumeDetails",JSON.stringify(resumeDetails));
-    navigate("/generatePdf", {state: {
-        data : resumeDetails
-    }});
+
+    try {
+      const resumeGeneration = await resumerServices.resumeGenerate({resumeDetails:resumeDetails});
+      if (resumeGeneration.success) {
+        navigate("/generatePdf", {state: {
+          data : resumeDetails
+        }});
+      }else{
+        ToasterMessage.errorMessage({
+          custom_message: 'Could not generate the resume!, try again!',
+      });
+      }
+    } catch (error) {
+    }
+
+
 }
 
   // useEffect(() => {

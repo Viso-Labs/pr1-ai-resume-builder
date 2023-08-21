@@ -41,11 +41,13 @@ export default function Heder_nav() {
                                             <img src="./images/Bell.png" alt="" />
                                         </a>
                                     </li>
+                                    
                                     <li class="nav-item dropdown me-2">
                                         <a class="ms-2" href="#">
                                             <img src="./images/User.png" alt="" />
                                         </a>
                                     </li>
+
                                     <li class="nav-item dropdown me-5 mt-4">
                                         <a class="nav-link dropdown-toggle tx_bold" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -96,6 +98,7 @@ export default function Heder_nav() {
                                             </a></li>
                                         </ul>
                                     </li>
+
                                 </ul>
                             </div>
 

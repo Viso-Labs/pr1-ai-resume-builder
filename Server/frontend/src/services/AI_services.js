@@ -19,6 +19,9 @@ const getBulletPoints = async (data) => {
           return(false);
         }
       } catch (error) {
+        ToasterMessage.ErrorMessage({
+          error: error,
+        });
         return(false);
       }
     }else{
@@ -33,7 +36,8 @@ const getBulletPoints = async (data) => {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       const response = await axios.post("/api/getCoverLetterBody", data);
       if (response.status === 200 || response.status === 202) {
-        return(response.data?.coverLetterBody);
+        // return(response.data?.coverLetterBody);
+        return(response.data);
       } else {
         ToasterMessage.errorMessage({
             custom_message: 'Could not create cover letter body, try again!',
@@ -41,6 +45,9 @@ const getBulletPoints = async (data) => {
         return(false);
       }
     } catch (error) {
+      ToasterMessage.ErrorMessage({
+        error: error,
+      });
       return(false);
     }
   };

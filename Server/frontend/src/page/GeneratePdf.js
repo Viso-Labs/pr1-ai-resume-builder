@@ -34,8 +34,9 @@ function GeneratePdf(props) {
                         <h6 style={{ fontWeight: 'normal', fontSize: '12px' }}>{resumeDetails?.district} {resumeDetails?.biocountry} {resumeDetails?.postalcode}</h6>
                     </div>
                     <hr />
+                    {/* Administrative Assistant with 7+ years of experience working directly for the CEO of Regions Financial, a Fortune 500 company. Possesses a Global MBA, impeccable written and verbal communication skills, and excellent interpersonal skills. */}
                     <div className='about'>
-                        {resumeDetails?.summary} Administrative Assistant with 7+ years of experience working directly for the CEO of Regions Financial, a Fortune 500 company. Possesses a Global MBA, impeccable written and verbal communication skills, and excellent interpersonal skills.
+                        {resumeDetails?.summary}
                     </div>
 
                     <div className='expereance'>
@@ -43,12 +44,12 @@ function GeneratePdf(props) {
                         <h6 style={{ textAlign: 'center' }}>{resumeDetails?.job_title}, {resumeDetails?.start}-{resumeDetails?.end}</h6>
                         <h6 style={{ textAlign: 'center' }}><b>{resumeDetails?.employer}, {resumeDetails?.city}, {resumeDetails?.country} </b></h6>
                         <div className='list-expereance'>
-                            <ul style={{ listStyleType: 'disc' }}>
+                            {/* <ul style={{ listStyleType: 'disc' }}>
                                 <li>Streamline direct office services such as departmental finances, records, budget preparation, personnel issues, and housekeeping, vastly reducing wasted time and saving $150,000 per year.</li>
                                 <li>Read and analyze incoming reports and memos to determine their importance and plan their distribution across a staff of 15. </li>
                                 <li>Conduct in-depth research, compile data, and prepare papers for consideration in biannual reviews presented to high-level executives and governing committees.</li>
                                 <li>Prepare daily memos, reports, invoices, financial statements, and other documents using word processing, database, spreadsheet, or presentation software.</li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </div>
 

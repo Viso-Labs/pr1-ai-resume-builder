@@ -18,6 +18,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "role is Required"],
     },
+    coverLetterCount: {
+        type: String,
+        required: [true, "coverLetterCount is Required"],
+    },
+    resumeCount: {
+        type: String,
+        required: [true, "resumeCount is Required"],
+    },
     tokenDetails: {
         type: {token:String, logged_at:String},
         required: [false, "tokenDetails is not Required"],

@@ -41,7 +41,7 @@ const upgradeUser = async( req,res )=>{
             const updateUser = await User.updateOne(
                 { _id: user.id },
                 {
-                  $set: { "role": "PREMIUM_USER", "roleInit":currentDate, "roleExpire":expiredDate },
+                  $set: { "role": "PREMIUM_USER", "roleInit":currentDate, "roleExpire":expiredDate, "resumeCount":"5", "coverLetterCount":"5" },
                 },
                 { expireAfterSeconds: expiredIn, upsert: true }
               );

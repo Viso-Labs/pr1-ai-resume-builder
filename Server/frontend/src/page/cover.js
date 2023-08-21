@@ -45,17 +45,11 @@ const FrameComponent = () => {
               </p>
 
               <p className="xyz-company">
-                I know that XYZ's current plans involve developing a comprehensive
-                online portal focused on healthcare-related issues. This project is a
-                perfect match for my personal and professional interests and an
-                exciting opportunity to create a unique online base of knowledge for
-                patients and healthcare professionals. I would love to leverage my
-                knowledge of SEO marketing and online growth marketing to achieve
-                groundbreaking results with this initiative. I would welcome the chance to discuss your digital marketing
-                objectives and show you how my success at ABC can translate into
-                digital and online marketing growth for XYZ.
-                <br />
-              </p><br />
+                I am writing to express my interest in the {resumeDetails?.profession} at {coverLetterDetails?.companyName}. With my qualifications and experience, I believe I am an ideal candidate for the role. I am a {resumeDetails?.degree} degree holder in {resumeDetails?.sclname}, and have worked in the {resumeDetails?.profession} for the past 2 years. During my career, I have developed a variety of skills and knowledge that I believe make me an excellent fit for this position. 
+. I am confident that my prior experience and skills in {resumeDetails?.filedofstudy} would make me a valuable asset for your team.I am excited by the prospect of joining your team, and believe that I would be a great addition to your organization. I am confident that I could make a positive contribution to your organization’s success.
+Thank you for your time and consideration. I look forward to discussing the position and my qualifications with you further.
+              </p>
+              <br />
               <p className="xyz-company">Kind regards, </p>
 
               <p>{resumeDetails?.fristname} {resumeDetails?.surname}</p>
