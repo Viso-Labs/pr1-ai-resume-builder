@@ -36,7 +36,7 @@ function GeneratePdf(props) {
                         </div>
                     </div>
                     <div className='expereance'>
-                        <h6 style={{ textAlign: 'center' }}><b>Expereance</b></h6>
+                        <h6 style={{ textAlign: 'center' }}><b>Skills</b></h6>
                         <h6 style={{ textAlign: 'center' }}>Rehabilitation Counselor, Sep 2008-Jul 2012</h6>
                         <h6 style={{ textAlign: 'center' }}><b>Virginia Department of Social Services, Richmond, VA </b></h6>
 
@@ -49,7 +49,7 @@ function GeneratePdf(props) {
                         </div>
                     </div>
                     <div className='expereance'>
-                        <h6 style={{ textAlign: 'center' }}><b>Expereance</b></h6>
+                        <h6 style={{ textAlign: 'center' }}><b>Accomplishments</b></h6>
                         <h6 style={{ textAlign: 'center' }}>Secretary, Jun 2007-Aug 2008</h6>
                         <h6 style={{ textAlign: 'center' }}><b>Bright Spot LTD, Boston, MA</b></h6>
 
